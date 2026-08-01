@@ -14,7 +14,13 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 </style>
 </head>
 <body class="w3-light-grey">
-
+<div class="w3-container w3-margin-top">
+  <a href="{{ '/' | relative_url }}" class="w3-button w3-teal w3-round-large w3-margin-bottom">
+    <i class="fa fa-arrow-left w3-margin-right"></i>Kembali ke Beranda
+  </a>
+  
+  {{ content }}
+</div>
   {{ content }}
 
 </body>
