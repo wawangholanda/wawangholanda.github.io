@@ -10,7 +10,7 @@ permalink: /cv/
   <!-- The Grid -->
   <div class="w3-row-padding">
   
-    <!-- Left Column (Profil & Skills) -->
+    <!-- Left Column (Profile & Skills) -->
     <div class="w3-col m4">
     
       <div class="w3-white w3-text-grey w3-card-4 w3-round-large">
@@ -77,22 +77,22 @@ permalink: /cv/
         <div class="w3-container">
           <h5 class="w3-opacity"><b>DevOps Engineer / Company Name</b></h5>
           <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2024 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
-          <p>Bertanggung jawab penuh atas keandalan infrastruktur cloud perusahaan dan otomatisasi rilis kode.</p>
+          <p>Responsible for ensuring system reliability, optimizing cloud infrastructure, and automating application deployment workflows.</p>
           <ul>
-            <li>Merancang arsitektur microservices berbasis Kubernetes untuk mendukung skalabilitas trafik tinggi.</li>
-            <li>Mengotomatisasi provisioning infrastruktur multi-environment menggunakan modul Terraform.</li>
-            <li>Memangkas waktu deployment aplikasi sebesar 40% dengan mengoptimalkan pipeline CI/CD.</li>
+            <li>Designed and maintained scalable microservices architectures running on production-grade Kubernetes clusters.</li>
+            <li>Automated infrastructure provisioning across development, staging, and production environments using Terraform modules.</li>
+            <li>Reduced software deployment lead time by 40% through continuous optimization of CI/CD delivery pipelines.</li>
           </ul>
           <hr>
         </div>
         
         <div class="w3-container">
           <h5 class="w3-opacity"><b>Junior Cloud Engineer / Company Name</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2022 - Des 2023</h6>
-          <p>Mengelola harian operasional cloud server dan memantau status metrik sistem.</p>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2022 - Dec 2023</h6>
+          <p>Managed day-to-day cloud operations, user access controls, and infrastructure health monitoring.</p>
           <ul>
-            <li>Melakukan migrasi server on-premises ke instans komputasi cloud publik dengan zero-downtime.</li>
-            <li>Mengonfigurasi dasbor monitoring (Grafana) dan sistem peringatan otomatis via Slack/Email.</li>
+            <li>Assisted in successfully migrating on-premises legacy systems to public cloud infrastructure with zero downtime.</li>
+            <li>Configured centralized monitoring dashboards (Grafana) and implemented proactive incident alerting via Slack and Email.</li>
           </ul>
           <br>
         </div>
@@ -103,16 +103,16 @@ permalink: /cv/
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education & Credentials</h2>
         
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>Sertifikasi Profesional</b></h5>
+          <h5 class="w3-opacity"><b>Professional Certifications</b></h5>
           <p>• Certified Kubernetes Administrator (CKA) - The Linux Foundation</p>
           <p>• AWS Certified Solutions Architect - Associate - Amazon Web Services</p>
           <hr>
         </div>
         
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>Nama Universitas / Institusi</b></h5>
+          <h5 class="w3-opacity"><b>University Name / Institution</b></h5>
           <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2018 - 2022</h6>
-          <p>Sarjana Komputer - Teknik Informatika / Sistem Informasi</p><br>
+          <p>Bachelor of Information Technology / Computer Science</p><br>
         </div>
       </div>
 
@@ -129,5 +129,5 @@ permalink: /cv/
   <p>Find me on social media.</p>
   <a href="https://github.com" target="_blank" class="w3-text-white w3-margin-right"><i class="fa fa-github w3-xlarge"></i></a>
   <a href="#" target="_blank" class="w3-text-white"><i class="fa fa-linkedin w3-xlarge"></i></a>
-  <p style="font-size:12px; margin-top:10px;"><a href="/" class="w3-text-white" style="text-decoration:none;"><i class="fa fa-arrow-left"></i> Kembali ke Beranda</a></p>
+  <p style="font-size:12px; margin-top:10px;"><a href="/" class="w3-text-white" style="text-decoration:none;"><i class="fa fa-arrow-left"></i> Back to Home</a></p>
 </footer>
