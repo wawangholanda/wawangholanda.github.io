@@ -4,16 +4,26 @@
 <title>Portfolio</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css"> -->
 <link rel="stylesheet" href="{{ '/assets/css/w3.css' | relative_url }}">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 <link rel="stylesheet" href="{{ '/assets/css/font-awesome.min.css' | relative_url }}">  
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+
+/* CSS Kustom Background Foto */
+.bg-photo-local {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                    url("{{ '/assets/images/portfolio-bg.jpg' | relative_url }}");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
 </style>
 </head>
-<body class="w3-light-grey">
+<body class="bg-photo-local">
+
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card" id="myNavbar">
     <a href="{{ '/' | relative_url }}" class="w3-bar-item w3-button w3-wide">
@@ -21,7 +31,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     </a>
   </div>
 </div>
+
+<div style="padding-top: 50px;">
   {{ content }}
+</div>
 
 </body>
 </html>
