@@ -1,84 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Curriculum Vitae</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css"> -->
-<link rel="stylesheet" href="{{ '/assets/css/w3.css' | relative_url }}">  
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-<link rel="stylesheet" href="{{ '/assets/css/font-awesome.min.css' | relative_url }}">  
-<style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
-</style>
-</head>
-<body class="w3-light-grey">
-
-  {{ content }}
-  <!DOCTYPE html>
-<html>
-<head>
-  </head>
-<body>
-
-  {{ content }}
-
-  <a href="#" class="btn-top-responsive w3-button w3-theme-d4 w3-hover-theme w3-circle" title="Kembali ke Atas">
-    <i class="fa fa-arrow-up"></i>
-    <span class="w3-hide-small"> Back to Top</span>
-  </a>
-
+  <title>Curriculum Vitae</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="{{ '/assets/css/w3.css' | relative_url }}">  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="{{ '/assets/css/font-awesome.min.css' | relative_url }}">  
+  
   <style>
+    html, body, h1, h2, h3, h4, h5, h6 {
+      font-family: "Roboto", sans-serif;
+    }
+
+    /* Style Tombol Back to Top */
     .btn-top-responsive {
       position: fixed;
       right: 20px;
       z-index: 9999;
       box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
-
     @media (max-width: 600px) {
-      .btn-top-responsive {
-        bottom: 20px;
-      }
+      .btn-top-responsive { bottom: 20px; }
+    }
+    @media (min-width: 601px) {
+      .btn-top-responsive { top: 20px; }
     }
 
+    /* Style Tombol Back to Homepage */
+    .btn-home-responsive {
+      position: fixed;
+      left: 20px;
+      z-index: 9999;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+    @media (max-width: 600px) {
+      .btn-home-responsive { bottom: 20px; }
+    }
     @media (min-width: 601px) {
-      .btn-top-responsive {
-        top: 20px;
-      }
+      .btn-home-responsive { top: 20px; }
     }
   </style>
+</head>
+<body class="w3-light-grey">
 
-</body>
-</html>
-<a href="{{ '/' | relative_url }}" class="btn-home-responsive w3-button w3-theme-d4 w3-hover-theme w3-circle" title="Kembali ke Beranda">
-  <i class="fa fa-home"></i>
-  <span class="w3-hide-small"> Back to Homepage</span>
-</a>
+  <a href="{{ '/' | relative_url }}" class="btn-home-responsive w3-button w3-theme-d4 w3-hover-theme w3-circle" title="Kembali ke Beranda">
+    <i class="fa fa-home"></i>
+    <span class="w3-hide-small"> Back to Homepage</span>
+  </a>
 
-<style>
-  /* Base Style untuk Tombol Home */
-  .btn-home-responsive {
-    position: fixed;
-    left: 20px;
-    z-index: 9999;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  }
+  <a href="#" class="btn-top-responsive w3-button w3-theme-d4 w3-hover-theme w3-circle" title="Kembali ke Atas">
+    <i class="fa fa-arrow-up"></i>
+    <span class="w3-hide-small"> Back to Top</span>
+  </a>
 
-  /* Mobile (Layar <= 600px): Posisi di KIRI BAWAH */
-  @media (max-width: 600px) {
-    .btn-home-responsive {
-      bottom: 20px;
-    }
-  }
+  {{ content }}
 
-  /* Desktop/Tablet (Layar > 600px): Posisi di KIRI ATAS */
-  @media (min-width: 601px) {
-    .btn-home-responsive {
-      top: 20px;
-    }
-  }
-</style>
 </body>
 </html>
