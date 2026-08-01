@@ -1,0 +1,16 @@
+/* Custom Style untuk Halaman CV */
+.cv-timeline-item {
+  border-left: 3px solid #009688;
+  padding-left: 15px;
+  margin-bottom: 20px;
+}
+
+/* Mengoptimalkan tampilan saat CV dicetak/save PDF */
+@media print {
+  .w3-bar, footer, .no-print {
+    display: none !important;
+  }
+  body {
+    background-color: #fff !important;
+  }
+}
