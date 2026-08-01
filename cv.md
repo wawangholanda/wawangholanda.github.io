@@ -1,23 +1,8 @@
 ---
 layout: w3-cv
-title: Curriculum Vitae
+title: Curriculum Vitae - Wawang Holanda
 permalink: /cv/
 ---
-
-<!DOCTYPE html>
-<html>
-<head>
-<title>W3.CSS Template</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
-</style>
-</head>
-<body class="w3-light-grey">
 
 <!-- Page Container -->
 <div class="w3-content w3-margin-top" style="max-width:1400px;">
@@ -25,56 +10,55 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   <!-- The Grid -->
   <div class="w3-row-padding">
   
-    <!-- Left Column -->
-    <div class="w3-third">
+    <!-- Left Column (Profil & Skills) -->
+    <div class="w3-col m4">
     
-      <div class="w3-white w3-text-grey w3-card-4">
-        <div class="w3-display-container">
-          <img src="/w3images/avatar_hat.jpg" style="width:100%" alt="Avatar">
-          <div class="w3-display-bottomleft w3-container w3-text-black">
-            <h2>Jane Doe</h2>
-          </div>
-        </div>
-        <div class="w3-container">
-          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Designer</p>
-          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>London, UK</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>ex@mail.com</p>
-          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>1224435534</p>
+      <div class="w3-white w3-text-grey w3-card-4 w3-round-large">
+        <div class="w3-container w3-padding-16">
+          <h2 class="w3-text-black">Wawang Holanda</h2>
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>DevOps / Platform Engineer</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Indonesia</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>wawangholanda@email.com</p>
+          <p><i class="fa fa-globe fa-fw w3-margin-right w3-large w3-text-teal"></i><a href="https://github.io" class="w3-text-teal" style="text-decoration:none;">wawangholanda.github.io</a></p>
           <hr>
 
-          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
-          <p>Adobe Photoshop</p>
+          <!-- Section: Core DevOps Skills -->
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Technical Skills</b></p>
+          
+          <p>Cloud Infrastructure (AWS / GCP)</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:85%">85%</div>
+          </div>
+          
+          <p>Infrastructure as Code (Terraform)</p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
             <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
           </div>
-          <p>Photography</p>
+          
+          <p>Containers & Orchestration (Docker / K8s)</p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
-              <div class="w3-center w3-text-white">80%</div>
-            </div>
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">80%</div>
           </div>
-          <p>Illustrator</p>
+          
+          <p>CI/CD Pipelines (GitHub Actions / GitLab)</p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
-          </div>
-          <p>Media</p>
-          <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:85%">85%</div>
           </div>
           <br>
 
-          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Languages</b></p>
-          <p>English</p>
+          <!-- Section: Tools & Methodologies -->
+          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>Tools & Tech</b></p>
+          <p>Linux OS / Bash Scripting</p>
           <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="height:24px;width:90%"></div>
           </div>
-          <p>Spanish</p>
+          <p>GitOps (ArgoCD / Flux)</p>
           <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:55%"></div>
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="height:24px;width:75%"></div>
           </div>
-          <p>German</p>
+          <p>Observability (Prometheus & Grafana)</p>
           <div class="w3-light-grey w3-round-xlarge">
-            <div class="w3-round-xlarge w3-teal" style="height:24px;width:25%"></div>
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="height:24px;width:80%"></div>
           </div>
           <br>
         </div>
@@ -83,74 +67,67 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     <!-- End Left Column -->
     </div>
 
-    <!-- Right Column -->
-    <div class="w3-twothird">
+    <!-- Right Column (Work Experience & Education) -->
+    <div class="w3-col m8">
     
-      <div class="w3-container w3-card w3-white w3-margin-bottom">
+      <!-- Section: Work Experience -->
+      <div class="w3-container w3-card w3-white w3-margin-bottom w3-round-large">
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
+        
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>Front End Developer / w3schools.com</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2015 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
-          <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+          <h5 class="w3-opacity"><b>DevOps Engineer / Company Name</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2024 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
+          <p>Bertanggung jawab penuh atas keandalan infrastruktur cloud perusahaan dan otomatisasi rilis kode.</p>
+          <ul>
+            <li>Merancang arsitektur microservices berbasis Kubernetes untuk mendukung skalabilitas trafik tinggi.</li>
+            <li>Mengotomatisasi provisioning infrastruktur multi-environment menggunakan modul Terraform.</li>
+            <li>Memangkas waktu deployment aplikasi sebesar 40% dengan mengoptimalkan pipeline CI/CD.</li>
+          </ul>
           <hr>
         </div>
+        
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>Web Developer / something.com</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Mar 2012 - Dec 2014</h6>
-          <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>Graphic Designer / designsomething.com</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2010 - Mar 2012</h6>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><br>
+          <h5 class="w3-opacity"><b>Junior Cloud Engineer / Company Name</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2022 - Des 2023</h6>
+          <p>Mengelola harian operasional cloud server dan memantau status metrik sistem.</p>
+          <ul>
+            <li>Melakukan migrasi server on-premises ke instans komputasi cloud publik dengan zero-downtime.</li>
+            <li>Mengonfigurasi dasbor monitoring (Grafana) dan sistem peringatan otomatis via Slack/Email.</li>
+          </ul>
+          <br>
         </div>
       </div>
 
-      <div class="w3-container w3-card w3-white">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
+      <!-- Section: Education & Certifications -->
+      <div class="w3-container w3-card w3-white w3-round-large">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education & Credentials</h2>
+        
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>W3Schools.com</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Forever</h6>
-          <p>Web Development! All I need to know in one place</p>
+          <h5 class="w3-opacity"><b>Sertifikasi Profesional</b></h5>
+          <p>• Certified Kubernetes Administrator (CKA) - The Linux Foundation</p>
+          <p>• AWS Certified Solutions Architect - Associate - Amazon Web Services</p>
           <hr>
         </div>
+        
         <div class="w3-container">
-          <h5 class="w3-opacity"><b>London Business School</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2015</h6>
-          <p>Master Degree</p>
-          <hr>
-        </div>
-        <div class="w3-container">
-          <h5 class="w3-opacity"><b>School of Coding</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2010 - 2013</h6>
-          <p>Bachelor Degree</p><br>
+          <h5 class="w3-opacity"><b>Nama Universitas / Institusi</b></h5>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2018 - 2022</h6>
+          <p>Sarjana Komputer - Teknik Informatika / Sistem Informasi</p><br>
         </div>
       </div>
 
     <!-- End Right Column -->
     </div>
     
-  <!-- End Grid -->
   </div>
-  
-  <!-- End Page Container -->
+  <!-- End Grid -->
 </div>
+<!-- End Page Container -->
 
-<footer class="w3-container w3-teal w3-center w3-margin-top">
+<!-- Footer -->
+<footer class="w3-container w3-teal w3-center w3-margin-top w3-padding-16">
   <p>Find me on social media.</p>
-  <i class="fa fa-facebook-official w3-hover-opacity"></i>
-  <i class="fa fa-instagram w3-hover-opacity"></i>
-  <i class="fa fa-snapchat w3-hover-opacity"></i>
-  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-  <i class="fa fa-twitter w3-hover-opacity"></i>
-  <i class="fa fa-linkedin w3-hover-opacity"></i>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+  <a href="https://github.com" target="_blank" class="w3-text-white w3-margin-right"><i class="fa fa-github w3-xlarge"></i></a>
+  <a href="#" target="_blank" class="w3-text-white"><i class="fa fa-linkedin w3-xlarge"></i></a>
+  <p style="font-size:12px; margin-top:10px;"><a href="/" class="w3-text-white" style="text-decoration:none;"><i class="fa fa-arrow-left"></i> Kembali ke Beranda</a></p>
 </footer>
-
-</body>
-</html>
-
-<div class="w3-content w3-margin-top" style="max-width:1400px;">
-  <!-- Isi konten CV Anda -->
-</div>
