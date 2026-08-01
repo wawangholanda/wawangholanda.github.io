@@ -19,6 +19,13 @@
       background-attachment: fixed;
       color: #ffffff; /* Mengubah warna teks default agar kontras dan mudah dibaca */
     }
+    .hero-bg-photo {
+      /* Ganti URL gambar dengan path lokal Anda dan gunakan filter Liquid relative_url */
+      background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('{{ "/assets/images/hero-bg.jpg" | relative_url }}');
+      background-size: cover; /* Memastikan gambar menutupi area */
+      background-position: center; /* Mengetengahkan gambar */
+      background-repeat: no-repeat; /* Mencegah gambar berulang */
+    }    
   </style>
 </head>
 <body class="bg-custom">
