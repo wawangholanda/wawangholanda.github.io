@@ -4,27 +4,27 @@ title: DevOps & Platform Engineering Portfolio
 permalink: /portofolio/
 ---
 
-<!-- Container Utama -->
+<!-- Main Container -->
 <div class="w3-content w3-padding-64" style="max-width:1200px">
 
-  <!-- Header Halaman -->
+  <!-- Header -->
   <header class="w3-container w3-center w3-padding-32">
     <h1 class="w3-text-white"><b>PROJECT PORTFOLIO</b></h1>
-    <p class="w3-text-grey">Automasi Infrastruktur, Pipeline CI/CD, dan Arsitektur Cloud Berbasis Metrik</p>
+    <p class="w3-text-grey">Infrastructure as Code, CI/CD Pipelines, and Metric-Driven Cloud Architectures</p>
     <hr style="width:200px; margin:auto;" class="w3-opacity">
   </header>
 
-  <!-- Grid Proyek (3 Kolom pada Desktop, 1 Kolom pada Mobile) -->
+  <!-- Project Grid -->
   <div class="w3-row-padding w3-margin-top">
     
-    <!-- KARTU PROYEK 1: Infrastructure as Code -->
+    <!-- PROJECT CARDS 1: IaC -->
     <div class="w3-col l4 m6 w3-margin-bottom">
       <div class="w3-card-4 w3-dark-grey w3-round-large">
         <div class="w3-container w3-padding-16">
           <div class="w3-right w3-text-teal"><i class="fa fa-cloud fa-2x"></i></div>
           <h4 class="w3-text-white"><b>AWS Multi-Region Infrastructure</b></h4>
           <p class="w3-text-light-grey" style="min-height: 80px;">
-            Membangun arsitektur AWS multi-region yang highly available menggunakan Terraform. Mengurangi waktu provisioning dari hitungan hari menjadi menit.
+            Architected a highly available AWS environment using modular Terraform. Automated provisioning workflows to reduce deployment time from days to minutes.
           </p>
           <div class="w3-padding-small">
             <span class="w3-tag w3-small w3-black w3-round">Terraform</span>
@@ -37,14 +37,14 @@ permalink: /portofolio/
       </div>
     </div>
 
-    <!-- KARTU PROYEK 2: Containerization & Orchestration -->
+    <!-- PROJECT CARDS 2: Containers -->
     <div class="w3-col l4 m6 w3-margin-bottom">
       <div class="w3-card-4 w3-dark-grey w3-round-large">
         <div class="w3-container w3-padding-16">
           <div class="w3-right w3-text-blue"><i class="fa fa-cubes fa-2x"></i></div>
           <h4 class="w3-text-white"><b>Kubernetes Cluster Migration</b></h4>
           <p class="w3-text-light-grey" style="min-height: 80px;">
-            Memigrasikan aplikasi monolitik ke microservices di dalam cluster EKS. Mengimplementasikan ArgoCD untuk strategi deployment GitOps yang aman.
+            Migrated legacy applications into Amazon EKS clusters. Configured ArgoCD to enforce declarative GitOps strategies for secure deployment rollouts.
           </p>
           <div class="w3-padding-small">
             <span class="w3-tag w3-small w3-black w3-round">Kubernetes</span>
@@ -57,14 +57,14 @@ permalink: /portofolio/
       </div>
     </div>
 
-    <!-- KARTU PROYEK 3: CI/CD & Automation -->
+    <!-- PROJECT CARDS 3: CI/CD -->
     <div class="w3-col l4 m6 w3-margin-bottom">
       <div class="w3-card-4 w3-dark-grey w3-round-large">
         <div class="w3-container w3-padding-16">
           <div class="w3-right w3-text-green"><i class="fa fa-refresh fa-2x"></i></div>
           <h4 class="w3-text-white"><b>Automated CI/CD Pipeline</b></h4>
           <p class="w3-text-light-grey" style="min-height: 80px;">
-            Merancang alur kerja GitHub Actions untuk otomatisasi testing, security scanning (Trivy), dan deployment otomatis ke Google Cloud Run.
+            Designed comprehensive GitHub Actions workflows integrating automated unit testing, container vulnerability scanning (Trivy), and Cloud Run deployment.
           </p>
           <div class="w3-padding-small">
             <span class="w3-tag w3-small w3-black w3-round">GitHub Actions</span>
@@ -77,18 +77,19 @@ permalink: /portofolio/
       </div>
     </div>
 
-  </div> <!-- Akhir Grid Baris 1 -->
+  </div>
 
-  <!-- Grid Baris 2: Observability & Log Management -->
+  <!-- Row 2 -->
   <div class="w3-row-padding">
     
+    <!-- PROJECT CARDS 4: Observability -->
     <div class="w3-col l4 m6 w3-margin-bottom">
       <div class="w3-card-4 w3-dark-grey w3-round-large">
         <div class="w3-container w3-padding-16">
           <div class="w3-right w3-text-orange"><i class="fa fa-area-chart fa-2x"></i></div>
           <h4 class="w3-text-white"><b>Observability Stack Setup</b></h4>
           <p class="w3-text-light-grey" style="min-height: 80px;">
-            Implementasi monitoring dan alerting system terpusat menggunakan Prometheus dan Grafana untuk mendeteksi downtime infrastruktur < 30 detik.
+            Deployed a centralized enterprise monitoring stack using Prometheus and Grafana, establishing actionable metric alerting under 30 seconds.
           </p>
           <div class="w3-padding-small">
             <span class="w3-tag w3-small w3-black w3-round">Prometheus</span>
@@ -101,11 +102,11 @@ permalink: /portofolio/
       </div>
     </div>
 
-  </div> <!-- Akhir Grid Baris 2 -->
+  </div>
 
-  <!-- Tombol Kembali ke Halaman Utama -->
+  <!-- Back Button -->
   <div class="w3-container w3-center w3-padding-32">
-    <a href="/" class="w3-button w3-light-grey w3-round-large"><i class="fa fa-arrow-left"></i> Kembali ke Beranda</a>
+    <a href="/" class="w3-button w3-light-grey w3-round-large"><i class="fa fa-arrow-left"></i> Back to Home</a>
   </div>
 
 </div>
