@@ -1,89 +1,65 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+<head>
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.name }}</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Pustaka CSS Utama -->
+  <link rel="stylesheet" href="https://w3schools.com">
+  <link rel="stylesheet" href="https://googleapis.com">
+  <link rel="stylesheet" href="https://cloudflare.com">
+  
+  <style>
+    body, h1, h2, h3, h4, h5, h6 { font-family: "Montserrat", sans-serif; }
+    /* Menghilangkan margin bawaan jekyll-now jika ada */
+    .container { max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+  </style>
+</head>
+<body style="background: #111827;">
 
-    {% include meta.html %}
-
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-    <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
-
-    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
-  </head>
-
-  <body>
-    <!-- Navigation Bar (Desktop & Tablet) -->
-    <div class="w3-top" style="z-index: 9999;">
-      <div class="w3-bar w3-black w3-card w3-left-align w3-large">
-        <!-- Tombol Menu Mobile (Hanya muncul di layar kecil) -->
-        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-black" href="javascript:void(0);" onclick="toggleMobileMenu()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-        
-        <!-- Link Navigasi Utama -->
-        <a href="/" class="w3-bar-item w3-button w3-padding-large w3-teal"><i class="fa fa-home"></i> Home</a>
-        <a href="/cv/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">CV</a>
-        <a href="/portofolio/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Portfolio</a>
-        <a href="/certificates/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Certificates</a>
-        <a href="/uses/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Uses</a>
-      </div>
-    
-      <!-- Navigation Bar (Mobile Toggle Menu) -->
-      <div id="navMobile" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-large">
-        <a href="/cv/" class="w3-bar-item w3-button w3-padding-large">CV</a>
-        <a href="/portofolio/" class="w3-bar-item w3-button w3-padding-large">Portfolio</a>
-        <a href="/certificates/" class="w3-bar-item w3-button w3-padding-large">Certificates</a>
-        <a href="/uses/" class="w3-bar-item w3-button w3-padding-large">Uses</a>
-      </div>
-    </div>
-    
-    <!-- Elemen Spacer agar konten di bawahnya tidak tertutup oleh Navbar Fixed Top -->
-    <div style="margin-top:50px;"></div>
-    
-    <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
-
-          <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
-          </div>
-
-          <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
-          </nav>
-        </header>
-      </div>
+  <!-- ================= NAVIGASI BAR ATAS ================= -->
+  <div class="w3-top" style="z-index: 9999;">
+    <div class="w3-bar w3-black w3-card w3-large">
+      <!-- Tombol Menu Mobile (Hanya muncul di HP) -->
+      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-black" href="javascript:void(0);" onclick="toggleMobileMenu()"><i class="fa fa-bars"></i></a>
+      
+      <!-- Link Navigasi -->
+      <a href="/" class="w3-bar-item w3-button w3-padding-large w3-teal"><i class="fa fa-home"></i> Home</a>
+      <a href="/cv/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">CV</a>
+      <a href="/portofolio/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Portfolio</a>
+      <a href="/certificates/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Certificates</a>
+      <a href="/uses/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Uses</a>
     </div>
 
-    <div id="main" role="main" class="container">
-      {{ content }}
+    <!-- Navigation Bar Mobile (Menu Dropdown HP) -->
+    <div id="navMobile" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-large">
+      <a href="/cv/" class="w3-bar-item w3-button w3-padding-large">CV</a>
+      <a href="/portofolio/" class="w3-bar-item w3-button w3-padding-large">Portfolio</a>
+      <a href="/certificates/" class="w3-bar-item w3-button w3-padding-large">Certificates</a>
+      <a href="/uses/" class="w3-bar-item w3-button w3-padding-large">Uses</a>
     </div>
+  </div>
 
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          {% include svg-icons.html %}
-        </footer>
-      </div>
-    </div>
+  <!-- Spacer agar konten tidak tertutup Navbar -->
+  <div style="margin-top:54px;"></div>
 
-    {% include analytics.html %}
-    <script>
-    // Fungsi untuk membuka dan menutup menu pada layar handphone
-    function toggleMobileMenu() {
-      var x = document.getElementById("navMobile");
-      if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-      } else { 
-        x.className = x.className.replace(" w3-show", "");
-      }
+  <!-- ================= KONTEN HALAMAN ================= -->
+  <div class="container">
+    {{ content }}
+  </div>
+
+  <!-- Skrip Kontrol Menu HP -->
+  <script>
+  function toggleMobileMenu() {
+    var x = document.getElementById("navMobile");
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+    } else { 
+      x.className = x.className.replace(" w3-show", "");
     }
-    </script>
+  }
+  </script>
 
-  </body>
+</body>
 </html>
