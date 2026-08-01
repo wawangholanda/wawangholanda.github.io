@@ -10,14 +10,14 @@
 
   <style>
     .bg-custom {
-      /* Menggunakan overlay hitam 65% + gambar background */
+      /* Overlay hitam transparan + Pemanggilan foto dari folder lokal Jekyll */
       background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
-                        url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1920');
+                        url("{{ '/assets/images/bg.jpg' | relative_url }}");
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
-      color: #ffffff; /* Mengubah default warna teks menjadi putih */
+      color: #ffffff; /* Mengubah warna teks default agar kontras dan mudah dibaca */
     }
   </style>
 </head>
