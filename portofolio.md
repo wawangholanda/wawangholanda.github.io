@@ -1,7 +1,7 @@
 ---
 layout: w3-cv
 title: Curriculum Vitae - Wawang Holanda
-permalink: /cv/
+permalink: /portofolio/
 ---
 
 <!-- Page Container -->
