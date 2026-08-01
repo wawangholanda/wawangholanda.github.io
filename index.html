@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Selamat Datang - Wawang Holanda"
+title: "Welcome - Wawang Holanda"
 ---
 
 <div class="w3-container w3-padding-64 w3-center w3-dark-grey">
@@ -9,26 +9,36 @@ title: "Selamat Datang - Wawang Holanda"
   <p>Please select the page you wish to visit below:</p>
 </div>
 
-<div class="w3-row-padding w3-padding-32 w3-center">
-  <div class="w3-half w3-margin-bottom">
-    <div class="w3-card w3-container w3-padding-24 w3-white">
-      <i class="fa fa-laptop w3-margin-bottom w3-text-teal" style="font-size:64px"></i>
-      <h2>Portfolio</h2>
-      <p>Check out my collection of projects, I've worked on.</p>
-      <a href="{{ '/portfolio/' | relative_url }}" class="w3-button w3-teal w3-round-large w3-margin-top">
-        Open Portfolio
-      </a>
+<div class="w3-row-padding w3-padding-32 w3-center" style="display: flex; flex-wrap: wrap;">
+  
+  <div class="w3-half w3-margin-bottom" style="display: flex; flex-direction: column;">
+    <div class="w3-card w3-container w3-padding-24 w3-white" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <i class="fa fa-laptop w3-margin-bottom w3-text-teal" style="font-size:64px"></i>
+        <h2>Portfolio</h2>
+        <p>Check out my collection of projects, I've worked on.</p>
+      </div>
+      <div>
+        <a href="{{ '/portfolio/' | relative_url }}" class="w3-button w3-teal w3-round-large w3-margin-top">
+          Open Portfolio
+        </a>
+      </div>
     </div>
   </div>
 
-  <div class="w3-half w3-margin-bottom">
-    <div class="w3-card w3-container w3-padding-24 w3-white">
-      <i class="fa fa-id-card w3-margin-bottom w3-text-blue" style="font-size:64px"></i>
-      <h2>Curriculum Vitae</h2>
-      <p>Learn about my educational background, work experience, and technical skills.</p>
-      <a href="{{ '/cv/' | relative_url }}" class="w3-button w3-blue w3-round-large w3-margin-top">
-        View CV
-      </a>
+  <div class="w3-half w3-margin-bottom" style="display: flex; flex-direction: column;">
+    <div class="w3-card w3-container w3-padding-24 w3-white" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <i class="fa fa-id-card w3-margin-bottom w3-text-blue" style="font-size:64px"></i>
+        <h2>Curriculum Vitae</h2>
+        <p>Learn about my educational background, work experience, and technical skills.</p>
+      </div>
+      <div>
+        <a href="{{ '/cv/' | relative_url }}" class="w3-button w3-blue w3-round-large w3-margin-top">
+          View CV
+        </a>
+      </div>
     </div>
   </div>
+
 </div>
