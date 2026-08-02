@@ -265,40 +265,69 @@ title: "Curriculum Vitae"
   </div>
 
 <style>
+/* CSS Khusus Mode Print / PDF */
 @media print {
-/* Paksa kolom kanan selalu menyisakan ruang 33.33% di sebelah kiri */
-  .w3-twothird {
-    width: 66.66666% !important;
-    float: right !important;
-    margin-left: 33.33333% !important; /* Mencegah kolom kanan geser ke kiri di hal 2 */
+  /* 1. Atur Margin Halaman Cetak & Hilangkan Header/Footer Bawaan Browser */
+  @page {
+    size: A4 portrait;
+    margin: 8mm 10mm 8mm 10mm; /* Menghilangkan spasi atas/bawah yang terlalu jauh */
   }
 
-  /* Tetapkan posisi kolom kiri */
-  .w3-third {
-    width: 33.33333% !important;
-    float: left !important;
-  }  
-  /* 1. Sembunyikan tombol, navigasi, dan elemen yang tidak perlu di PDF */
+  /* 2. Sembunyikan Tombol & Elemen yang Tidak Perlu */
   .w3-button, button, .no-print, nav, footer, header {
     display: none !important;
   }
 
-  /* 2. Paksa kolom kanan tetap di posisi kanan pada halaman 2 dst */
-  .w3-twothird {
-    width: 66.66666% !important;
-    float: right !important;
-    margin-left: 33.33333% !important; /* Memberikan ruang kosong di sebelah kiri */
+  /* 3. Reset Margin Atas Pembungkus Utama (Mengatasi Jarak Foto Menjauh dari Atas) */
+  body, html {
+    background: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  /* 3. Pastikan kolom kiri tetap mempertahankan lebarnya di halaman 1 */
-  .w3-third {
-    width: 33.33333% !important;
-    float: left !important;
+  .w3-content {
+    max-width: 100% !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
   }
 
-  /* 4. Mencegah pemotongan elemen di tengah garis pemisah halaman */
-  .w3-container, ul li {
+  /* 4. Ubah Baris Menjadi CSS Grid Samping-berdampingan */
+  .w3-row-padding {
+    display: grid !important;
+    grid-template-columns: 32% 66% !important; /* Kolom Kiri 32%, Kolom Kanan 66% */
+    column-gap: 2% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* 5. Reset Lebar dan Margin Float Bawaan W3.CSS */
+  .w3-third, .w3-twothird {
+    width: 100% !important;
+    float: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 6. Hilangkan Jarak Kosong Atas pada Foto/Avatar */
+  .w3-third .w3-card-4 {
+    margin-top: 0 !important;
+  }
+
+  .w3-third .w3-display-container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  /* 7. Mencegah Pemotongan Judul/Poin Pekerjaan yang Buruk di Tengah Halaman */
+  .w3-container {
     page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* 8. Menjaga Warna Background & Kartu Tetap Terciptakan dengan Baik saat PDF */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 }
 </style>
