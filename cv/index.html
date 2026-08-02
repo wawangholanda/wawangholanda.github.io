@@ -263,68 +263,79 @@ title: "Curriculum Vitae"
   </div>
   
   </div>
-
+  
 <style>
-/* CSS Khusus Mode Print / PDF */
 @media print {
-  /* 1. Atur Margin Halaman Cetak & Hilangkan Header/Footer Bawaan Browser */
+  /* 1. Pengaturan Ukuran Kertas & Margin PDF */
   @page {
     size: A4 portrait;
-    margin: 8mm 10mm 8mm 10mm; /* Menghilangkan spasi atas/bawah yang terlalu jauh */
+    margin: 10mm;
   }
 
-  /* 2. Sembunyikan Tombol & Elemen yang Tidak Perlu */
+  /* 2. Sembunyikan Elemen yang Tidak Perlu */
   .w3-button, button, .no-print, nav, footer, header {
     display: none !important;
   }
 
-  /* 3. Reset Margin Atas Pembungkus Utama (Mengatasi Jarak Foto Menjauh dari Atas) */
-  body, html {
+  /* 3. Reset Margin Body & Wrapper Utama */
+  html, body {
     background: #fff !important;
     margin: 0 !important;
     padding: 0 !important;
+    width: 100% !important;
   }
 
   .w3-content {
     max-width: 100% !important;
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  /* 4. Ubah Baris Menjadi CSS Grid Samping-berdampingan */
+  /* 4. Gunakan Table Layout (Mengunci Kolom Kiri Selalu di Kiri, Kanan Selalu di Kanan) */
   .w3-row-padding {
-    display: grid !important;
-    grid-template-columns: 32% 66% !important; /* Kolom Kiri 32%, Kolom Kanan 66% */
-    column-gap: 2% !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-
-  /* 5. Reset Lebar dan Margin Float Bawaan W3.CSS */
-  .w3-third, .w3-twothird {
+    display: table !important;
     width: 100% !important;
-    float: none !important;
+    table-layout: fixed !important;
     margin: 0 !important;
     padding: 0 !important;
   }
 
-  /* 6. Hilangkan Jarak Kosong Atas pada Foto/Avatar */
-  .w3-third .w3-card-4 {
-    margin-top: 0 !important;
+  /* Kolom Kiri (33%) */
+  .w3-third {
+    display: table-cell !important;
+    width: 33% !important;
+    vertical-align: top !important;
+    padding-right: 15px !important;
+    float: none !important;
   }
 
+  /* Kolom Kanan (67%) */
+  .w3-twothird {
+    display: table-cell !important;
+    width: 67% !important;
+    vertical-align: top !important;
+    padding-left: 15px !important;
+    float: none !important;
+  }
+
+  /* 5. Mengatasi Jarak Atas Foto Avatar */
+  .w3-third .w3-card-4,
   .w3-third .w3-display-container {
     margin-top: 0 !important;
     padding-top: 0 !important;
   }
 
-  /* 7. Mencegah Pemotongan Judul/Poin Pekerjaan yang Buruk di Tengah Halaman */
-  .w3-container {
-    page-break-inside: avoid;
-    break-inside: avoid;
+  .w3-twothird .w3-card {
+    margin-top: 0 !important;
   }
 
-  /* 8. Menjaga Warna Background & Kartu Tetap Terciptakan dengan Baik saat PDF */
+  /* 6. Mencegah Pemotongan Kartu/Pengalaman Kerja di Tengah Lipatan Halaman */
+  .w3-container {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* 7. Memastikan Warna Background & Tag Tetap Tercetak Presisi */
   * {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
