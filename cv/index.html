@@ -11,7 +11,7 @@ title: "Curriculum Vitae"
     
       <div class="w3-black w3-text-white w3-card-4">
         <div class="w3-display-container">
-          <img src="{{ '/assets/images/avatar.jpg' | relative_url }}" style="width:100%" alt="Avatar">
+          <img src="{{ '/assets/images/avatar.jpg' | relative_url }}" style="width:100%; margin-top:0" alt="Avatar">
           <div class="w3-display-bottomleft w3-container w3-text-white">
             <h2>Wawang Holanda</h2>
           </div>
@@ -263,21 +263,21 @@ title: "Curriculum Vitae"
   </div>
   
   </div>
-  
+
 <style>
 @media print {
-  /* 1. Pengaturan Ukuran Kertas & Margin PDF */
+  /* Ukuran & Margin Kertas PDF */
   @page {
     size: A4 portrait;
-    margin: 10mm;
+    margin: 8mm 10mm 8mm 10mm;
   }
 
-  /* 2. Sembunyikan Elemen yang Tidak Perlu */
+  /* Hilangkan Tombol & Elemen Non-Print */
   .w3-button, button, .no-print, nav, footer, header {
     display: none !important;
   }
 
-  /* 3. Reset Margin Body & Wrapper Utama */
+  /* Reset Dasar */
   html, body {
     background: #fff !important;
     margin: 0 !important;
@@ -291,7 +291,7 @@ title: "Curriculum Vitae"
     padding: 0 !important;
   }
 
-  /* 4. Gunakan Table Layout (Mengunci Kolom Kiri Selalu di Kiri, Kanan Selalu di Kanan) */
+  /* Pengunci Layout 2 Kolom (Table Layout) */
   .w3-row-padding {
     display: table !important;
     width: 100% !important;
@@ -300,42 +300,55 @@ title: "Curriculum Vitae"
     padding: 0 !important;
   }
 
-  /* Kolom Kiri (33%) */
   .w3-third {
     display: table-cell !important;
     width: 33% !important;
     vertical-align: top !important;
-    padding-right: 15px !important;
+    padding-right: 12px !important;
     float: none !important;
   }
 
-  /* Kolom Kanan (67%) */
   .w3-twothird {
     display: table-cell !important;
     width: 67% !important;
     vertical-align: top !important;
-    padding-left: 15px !important;
+    padding-left: 12px !important;
     float: none !important;
   }
 
-  /* 5. Mengatasi Jarak Atas Foto Avatar */
+  /* FIX: Mengatasi Spasi Foto & Tulisan DEVOPS yang Menjauh */
+  .w3-third .w3-card,
+  .w3-third .w3-card-2,
   .w3-third .w3-card-4,
   .w3-third .w3-display-container {
     margin-top: 0 !important;
     padding-top: 0 !important;
   }
 
-  .w3-twothird .w3-card {
+  .w3-third img {
     margin-top: 0 !important;
+    padding-top: 0 !important;
+    display: block !important;
   }
 
-  /* 6. Mencegah Pemotongan Kartu/Pengalaman Kerja di Tengah Lipatan Halaman */
+  .w3-third .w3-container,
+  .w3-third .w3-display-bottomleft {
+    margin-top: 0 !important;
+    padding-top: 4px !important;
+  }
+
+  .w3-third h2, .w3-third h3, .w3-third h4, .w3-third p {
+    margin-top: 2px !important;
+    margin-bottom: 4px !important;
+  }
+
+  /* Cegah Potongan Konten di Tengah Lipatan Halaman */
   .w3-container {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
   }
 
-  /* 7. Memastikan Warna Background & Tag Tetap Tercetak Presisi */
+  /* Ketepatan Warna Cetak */
   * {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
