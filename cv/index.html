@@ -266,9 +266,27 @@ title: "Curriculum Vitae"
 
 <style>
 @media print {
-  /* Sembunyikan semua button & class no-print */
+  /* 1. Sembunyikan tombol, navigasi, dan elemen yang tidak perlu di PDF */
   .w3-button, button, .no-print, nav, footer, header {
     display: none !important;
+  }
+
+  /* 2. Paksa kolom kanan tetap di posisi kanan pada halaman 2 dst */
+  .w3-twothird {
+    width: 66.66666% !important;
+    float: right !important;
+    margin-left: 33.33333% !important; /* Memberikan ruang kosong di sebelah kiri */
+  }
+
+  /* 3. Pastikan kolom kiri tetap mempertahankan lebarnya di halaman 1 */
+  .w3-third {
+    width: 33.33333% !important;
+    float: left !important;
+  }
+
+  /* 4. Mencegah pemotongan elemen di tengah garis pemisah halaman */
+  .w3-container, ul li {
+    page-break-inside: avoid;
   }
 }
 </style>
