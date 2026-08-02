@@ -263,6 +263,7 @@ title: "Curriculum Vitae"
   </div>
   
   </div>
+
 <style>
 @media print {
   /* 1. Pengaturan Ukuran Kertas & Margin PDF */
@@ -276,24 +277,23 @@ title: "Curriculum Vitae"
     display: none !important;
   }
 
-  /* 3. Reset Body & Container Utama */
-  html, body, .w3-content {
+  /* 3. Reset Total Margin & Spasi Atas (Penyebab Halaman Kosong) */
+  html, body, .w3-content, .w3-row-padding {
     background: #fff !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
   }
 
-  /* 4. Pengunci Grid Multi-Halaman (Agar Kolom Kanan Tidak Bergeser) */
+  /* 4. Pengunci Grid Multi-Halaman (Izinkan Pemotongan/Break antar Baris) */
   .w3-row-padding {
     display: grid !important;
     grid-template-columns: 32% 65% !important;
     column-gap: 3% !important;
     align-items: start !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    page-break-inside: auto !important; /* WAJIB auto agar halaman 1 langsung terisi */
+    break-inside: auto !important;
   }
 
   .w3-third {
@@ -302,6 +302,8 @@ title: "Curriculum Vitae"
     float: none !important;
     margin: 0 !important;
     padding: 0 !important;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
   }
 
   .w3-twothird {
@@ -310,9 +312,11 @@ title: "Curriculum Vitae"
     float: none !important;
     margin: 0 !important;
     padding: 0 !important;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
   }
 
-  /* 5. PERBAIKAN KHUSUS FOTO AVATAR & TULISAN MENJAUH */
+  /* 5. Khusus Perbaikan Foto Avatar & Rapat Teks */
   .w3-third .w3-card-4,
   .w3-third .w3-card {
     margin-top: 0 !important;
@@ -320,7 +324,6 @@ title: "Curriculum Vitae"
     box-shadow: none !important;
   }
 
-  /* Hilangkan pembengkakan tinggi pada kontainer foto */
   .w3-third .w3-display-container {
     position: relative !important;
     height: auto !important;
@@ -328,17 +331,14 @@ title: "Curriculum Vitae"
     padding: 0 !important;
   }
 
-  /* Paksa gambar avatar tetap di posisi teratas tanpa margin ekstra */
   .w3-third img {
     display: block !important;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+    margin: 0 !important;
     padding: 0 !important;
     width: 100% !important;
     height: auto !important;
   }
 
-  /* Rapatkan teks nama di dalam gambar (w3-display-bottomleft) */
   .w3-third .w3-display-bottomleft {
     position: absolute !important;
     bottom: 0 !important;
@@ -354,7 +354,6 @@ title: "Curriculum Vitae"
     line-height: 1.1 !important;
   }
 
-  /* Rapatkan teks di bawah foto (Job Title, Lokasi, Email, dll) */
   .w3-third .w3-container {
     padding-top: 10px !important;
     padding-bottom: 0 !important;
@@ -370,10 +369,8 @@ title: "Curriculum Vitae"
     margin: 8px 0 !important;
   }
 
-  /* 6. Mencegah Pemotongan Blok Konten di Tengah Halaman */
-  .w3-container, 
-  .w3-card, 
-  .w3-twothird > div {
+  /* 6. Hanya Cegah Pemotongan pada Tiap-Tiap Kotak Pengalaman Kerja (Bukan Kontainer Utama) */
+  .w3-twothird .w3-container {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
   }
