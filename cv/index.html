@@ -277,14 +277,17 @@ title: "Curriculum Vitae"
 
 <style>
 @media print {
-  /* Memaksa teks tombol tetap terlihat */
-  button {
-    color: #009688 !important; /* Warna teal W3.CSS */
-    background-color: transparent !important;
-    border: 1px solid #009688 !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }  
+    /* Paksa tombol dan seluruh anak elemennya (teks & ikon) agar berwarna hitam/teal */
+    button, 
+    button *, 
+    .w3-btn, 
+    .w3-text-teal {
+      color: #000000 !important; /* atau #009688 untuk warna teal */
+      opacity: 1 !important;
+      visibility: visible !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
   /* 1. Pengaturan Ukuran Kertas & Margin PDF */
   @page {
     size: A4 portrait;
