@@ -277,46 +277,48 @@ title: "Curriculum Vitae"
     display: none !important;
   }
 
-  /* 3. Reset Total Margin & Spasi Atas (Penyebab Halaman Kosong) */
-  html, body, .w3-content, .w3-row-padding {
+  /* 3. Reset Total Body & Margin Atas (Paksa Isi dari Halaman 1 Paling Atas) */
+  html, body, .w3-content, .w3-row-padding, .w3-third, .w3-twothird {
     background: #fff !important;
     margin-top: 0 !important;
     padding-top: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
+    position: static !important;
+    float: none !important;
   }
 
-  /* 4. Pengunci Grid Multi-Halaman (Izinkan Pemotongan/Break antar Baris) */
+  /* 4. Matikan CSS Grid / Flexbox (Penyebab Halaman 1 Kosong di Browser) */
   .w3-row-padding {
-    display: grid !important;
-    grid-template-columns: 32% 65% !important;
-    column-gap: 3% !important;
-    align-items: start !important;
-    page-break-inside: auto !important; /* WAJIB auto agar halaman 1 langsung terisi */
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    page-break-inside: auto !important;
     break-inside: auto !important;
   }
 
+  /* 5. Kolom Kiri (Foto & Info Profil) - Menggunakan Absolute Position di Cetak */
   .w3-third {
-    grid-column: 1 !important;
-    width: 100% !important;
-    float: none !important;
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 30% !important;
     margin: 0 !important;
     padding: 0 !important;
-    page-break-inside: auto !important;
-    break-inside: auto !important;
   }
 
+  /* 6. Kolom Kanan (Pengalaman Kerja) - Diberi Margin Kiri Agar Tidak Menimpa Kolom Kiri */
   .w3-twothird {
-    grid-column: 2 !important;
-    width: 100% !important;
-    float: none !important;
-    margin: 0 !important;
+    display: block !important;
+    width: 67% !important;
+    margin-left: 33% !important; /* Mendorong kolom kanan ke posisinya */
+    margin-top: 0 !important;
     padding: 0 !important;
     page-break-inside: auto !important;
     break-inside: auto !important;
   }
 
-  /* 5. Khusus Perbaikan Foto Avatar & Rapat Teks */
+  /* 7. Perbaikan Foto Avatar & Rapat Teks */
   .w3-third .w3-card-4,
   .w3-third .w3-card {
     margin-top: 0 !important;
@@ -350,7 +352,7 @@ title: "Curriculum Vitae"
   .w3-third .w3-display-bottomleft h2 {
     margin: 0 !important;
     padding: 0 !important;
-    font-size: 20pt !important;
+    font-size: 18pt !important;
     line-height: 1.1 !important;
   }
 
@@ -369,13 +371,14 @@ title: "Curriculum Vitae"
     margin: 8px 0 !important;
   }
 
-  /* 6. Hanya Cegah Pemotongan pada Tiap-Tiap Kotak Pengalaman Kerja (Bukan Kontainer Utama) */
+  /* 8. Hanya Blok Pengalaman Kerja Individu yang Dilarang Terpotong Tengah Garis */
   .w3-twothird .w3-container {
     page-break-inside: avoid !important;
     break-inside: avoid !important;
+    margin-bottom: 12px !important;
   }
 
-  /* 7. Presisi Warna Cetak PDF */
+  /* 9. Warna Cetak PDF */
   * {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
