@@ -5,11 +5,9 @@ title: "Curriculum Vitae"
 
 <div class="w3-content w3-margin-top" style="max-width:1400px;">
 
-  <!-- The Grid -->
   <div class="w3-row-padding">
   
-    <!-- Left Column -->
-<div class="w3-third">
+    <div class="w3-third">
     
       <div class="w3-black w3-text-white w3-card-4">
         <div class="w3-display-container">
@@ -25,16 +23,11 @@ title: "Curriculum Vitae"
           <a href="https://calendly.com/wawang-holanda/devops-consultation-interview" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
             <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>Call to Action (Google Meet/Zoom)</p>
           </a>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>wawang.holanda@gmail.com</p>
-          <a href="https://calendly.com/wawang-holanda/devops-consultation-interview" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit;">
-            <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>Call to Action (Google Meet/Zoom)</p>
-          </a>
 
-          <button onclick="window.print()" class="w3-button w3-teal w3-block w3-round w3-margin-top w3-margin-bottom">
+          <button onclick="window.print()" class="w3-button w3-teal w3-block w3-round w3-margin-top w3-margin-bottom no-print">
             <i class="fa fa-file-pdf-o fa-fw w3-margin-right"></i>Download / Print PDF
           </button>
 
-          <hr>
           <hr>
 
           <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Skills</b></p>
@@ -100,7 +93,6 @@ title: "Curriculum Vitae"
 
     </div>
 
-    <!-- Right Column -->
     <div class="w3-twothird">
     
       <div class="w3-container w3-card w3-white w3-margin-bottom">
@@ -266,19 +258,17 @@ title: "Curriculum Vitae"
         </div>
       </div>
 
-    <!-- End Right Column -->
     </div>
     
-  <!-- End Grid -->
   </div>
   
-  <!-- End Page Container -->
-</div>
+  </div>
+
 <style>
 @media print {
-  .w3-button, button {
+  /* Sembunyikan semua button & class no-print */
+  .w3-button, button, .no-print, nav, footer, header {
     display: none !important;
   }
 }
 </style>
-
