@@ -266,6 +266,18 @@ title: "Curriculum Vitae"
 
 <style>
 @media print {
+/* Paksa kolom kanan selalu menyisakan ruang 33.33% di sebelah kiri */
+  .w3-twothird {
+    width: 66.66666% !important;
+    float: right !important;
+    margin-left: 33.33333% !important; /* Mencegah kolom kanan geser ke kiri di hal 2 */
+  }
+
+  /* Tetapkan posisi kolom kiri */
+  .w3-third {
+    width: 33.33333% !important;
+    float: left !important;
+  }  
   /* 1. Sembunyikan tombol, navigasi, dan elemen yang tidak perlu di PDF */
   .w3-button, button, .no-print, nav, footer, header {
     display: none !important;
