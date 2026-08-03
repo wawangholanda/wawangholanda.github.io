@@ -47,11 +47,21 @@
   <p>&copy; {{ 'now' | date: "%Y" }} Wawang Holanda. Powered by <a href="https://pages.github.com/" target="_blank" class="w3-hover-text-green">GitHub Pages</a> & Jekyll.</p>
   <p>Find me on social media.</p>
 
-  <!-- 👇 Badge Hit Counter dari HITS -->
+  <!-- 👇 Badge Hit Counter DINAMIS (muncul di SEMUA halaman) -->
   <p>Total Visitors: 
-    <img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fwawangholanda.github.io&label=&icon=github&color=%23198754&message=&style=flat&tz=UTC" 
-        alt="Visitor Counter">
-  </p>  
+    <img id="hit-counter" alt="Visitor Counter">
+  </p>
+
+  <script>
+    // Ambil URL halaman saat ini
+    var currentUrl = window.location.href;
+    
+    // Buat URL badge dengan parameter url = halaman saat ini
+    var badgeUrl = 'https://hitscounter.dev/api/hit?url=' + encodeURIComponent(currentUrl) + '&label=Pengunjung&icon=github&color=%23198754&style=flat&tz=UTC';
+    
+    // Tampilkan badge
+    document.getElementById('hit-counter').src = badgeUrl;
+  </script>
 </footer>
 
 </body>
