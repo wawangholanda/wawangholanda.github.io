@@ -3,9 +3,13 @@
   <p>Find me on social media.</p>
 
   <!-- 👇 Badge Hit Counter DINAMIS -->
+  <p>Total Visitors: 
+    <img id="hit-counter" alt="Visitor Counter">
+  </p>
+
   <script>
     var currentUrl = window.location.href;
-    var badgeUrl = 'https://hitscounter.dev/api/hit?url=' + encodeURIComponent(currentUrl) + '&label=Visitors: &icon=github&color=%23198754&style=flat&tz=UTC';
+    var badgeUrl = 'https://hitscounter.dev/api/hit?url=' + encodeURIComponent(currentUrl) + '&label=Pengunjung&icon=github&color=%23198754&style=flat&tz=UTC';
     document.getElementById('hit-counter').src = badgeUrl;
   </script>
 </footer>
