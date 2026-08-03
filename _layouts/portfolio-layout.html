@@ -22,12 +22,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 }
 
 
-/* Style Tombol Back to Top */
-.btn-top-responsive:active,
-.btn-home-responsive:active {
-  background-color: #f2ff00 !important;
-  color: #000000 !important;
-}
+/* Style Dasar Tombol Back to Top */
 .btn-top-responsive {
   position: fixed;
   right: 20px;
@@ -35,16 +30,27 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
   background-color: #f2ff00 !important;
   color: #000000 !important;
+  -webkit-tap-highlight-color: transparent; /* Hilangkan efek bayangan hitam saat tap di Android/iOS */
 }
 
-/* Hanya aktifkan hover untuk perangkat yang memakai Mouse/Trackpad */
-@media (hover: hover) {
+/* KUNCI PERBAIKAN: Paksa status focus & active di mobile kembali ke warna kuning */
+.btn-top-responsive:focus,
+.btn-top-responsive:focus-visible,
+.btn-top-responsive:active {
+  background-color: #f2ff00 !important;
+  color: #000000 !important;
+  outline: none;
+}
+
+/* Hover HANYA untuk komputer/mouse */
+@media (hover: hover) and (pointer: fine) {
   .btn-top-responsive:hover {
     background-color: #000000 !important;
     color: #ffffff !important;
   }
 }
 
+/* Responsif Posisi */
 @media (max-width: 600px) {
   .btn-top-responsive { bottom: 20px; }
 }
@@ -90,7 +96,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     <span class="w3-hide-small"> Back to Homepage</span>
   </a>
 
-  <a href="#" class="btn-top-responsive w3-button w3-theme-d4 w3-hover-theme w3-circle" title="Kembali ke Atas">
+  <a href="#" class="btn-top-responsive w3-button w3-circle" title="Kembali ke Atas" onclick="event.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'}); this.blur();">
     <i class="fa fa-arrow-up"></i>
     <span class="w3-hide-small"> Back to Top</span>
   </a>
