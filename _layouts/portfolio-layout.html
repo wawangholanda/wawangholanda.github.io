@@ -20,17 +20,38 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   background-attachment: fixed;
   min-height: 100vh;
 }
+/* Style Tombol Back to Homepage */
+.btn-home-responsive {
+  position: fixed;
+  left: 20px;
+  z-index: 9999;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  background-color: #f2ff00 !important; /* Warna background  */
+  color: #ffffff !important;           /* Warna teks/ikon */
+}
+.btn-home-responsive:hover {
+  background-color: #000000 !important; /* Warna saat tombol di-hover/disorot */
+  color: #ffffff !important;
+}
+@media (max-width: 600px) {
+  .btn-home-responsive { bottom: 20px; }
+}
+@media (min-width: 601px) {
+  .btn-home-responsive { top: 20px; }
+}
 </style>
 </head>
 <body class="bg-photo-local">
 
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="{{ '/' | relative_url }}" class="w3-bar-item w3-button w3-wide">
-      <i class="fa fa-arrow-left w3-margin-right"></i>back to homepage
-    </a>
-  </div>
-</div>
+  <a href="{{ '/' | relative_url }}" class="btn-home-responsive w3-button w3-theme-d4 w3-hover-theme w3-circle" title="Kembali ke Beranda">
+    <i class="fa fa-home"></i>
+    <span class="w3-hide-small"> Back to Homepage</span>
+  </a>
+
+  <a href="#" class="btn-top-responsive w3-button w3-theme-d4 w3-hover-theme w3-circle" title="Kembali ke Atas">
+    <i class="fa fa-arrow-up"></i>
+    <span class="w3-hide-small"> Back to Top</span>
+  </a>
 
 <div style="padding-top: 50px;">
   {{ content }}
