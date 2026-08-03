@@ -22,84 +22,73 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 }
 
 
-/* Style Dasar Tombol Back to Top */
-.btn-top-responsive {
-  position: fixed;
-  right: 20px;
-  z-index: 9999;
+/* Style Dasar Tombol Back to Top & Home */
+a.btn-top-responsive,
+a.btn-home-responsive,
+a.btn-top-responsive:link,
+a.btn-home-responsive:link,
+a.btn-top-responsive:visited,
+a.btn-home-responsive:visited,
+a.btn-top-responsive:focus,
+a.btn-home-responsive:focus,
+a.btn-top-responsive:active,
+a.btn-home-responsive:active {
+  background-color: #f2ff00 !important;
+  color: #000000 !important;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  background-color: #f2ff00 !important;
-  color: #000000 !important;
-  -webkit-tap-highlight-color: transparent; /* Hilangkan efek bayangan hitam saat tap di Android/iOS */
-}
-
-/* KUNCI PERBAIKAN: Paksa status focus & active di mobile kembali ke warna kuning */
-.btn-top-responsive:focus,
-.btn-top-responsive:focus-visible,
-.btn-top-responsive:active {
-  background-color: #f2ff00 !important;
-  color: #000000 !important;
+  z-index: 9999;
+  position: fixed;
+  -webkit-tap-highlight-color: transparent;
   outline: none;
 }
 
-/* Hover HANYA untuk komputer/mouse */
-@media (hover: hover) and (pointer: fine) {
-  .btn-top-responsive:hover {
-    background-color: #000000 !important;
-    color: #ffffff !important;
-  }
-}
-
-/* Responsif Posisi */
-@media (max-width: 600px) {
-  .btn-top-responsive { bottom: 20px; }
-}
-@media (min-width: 601px) {
-  .btn-top-responsive { top: 20px; }
-}
-
-/* Style Tombol Back to Homepage */
-.btn-top-responsive:active,
-.btn-home-responsive:active {
-  background-color: #f2ff00 !important;
-  color: #000000 !important;
-}
+/* Posisi Tombol Home (Kiri) */
 .btn-home-responsive {
-  position: fixed;
   left: 20px;
-  z-index: 9999;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  background-color: #f2ff00 !important;
-  color: #000000 !important;
 }
 
-/* Hanya aktifkan hover untuk perangkat yang memakai Mouse/Trackpad */
-@media (hover: hover) {
-  .btn-home-responsive:hover {
-    background-color: #000000 !important;
-    color: #ffffff !important;
+/* Posisi Tombol Top (Kanan) */
+.btn-top-responsive {
+  right: 20px;
+}
+
+/* Responsif Posisi Atas/Bawah */
+@media (max-width: 600px) {
+  .btn-top-responsive,
+  .btn-home-responsive { 
+    bottom: 20px; 
+  }
+}
+@media (min-width: 601px) {
+  .btn-top-responsive,
+  .btn-home-responsive { 
+    top: 20px; 
   }
 }
 
-@media (max-width: 600px) {
-  .btn-home-responsive { bottom: 20px; }
-}
-@media (min-width: 601px) {
-  .btn-home-responsive { top: 20px; }
+/* Hover Hitam HANYA Aktif di Laptop/Desktop yang Pakai Mouse */
+@media (hover: hover) and (pointer: fine) {
+  a.btn-top-responsive:hover,
+  a.btn-home-responsive:hover {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
 }
 </style>
 </head>
 <body class="bg-photo-local">
 
-  <a href="{{ '/' | relative_url }}" class="btn-home-responsive w3-button w3-theme-d4 w3-hover-theme w3-circle" title="Kembali ke Beranda">
-    <i class="fa fa-home"></i>
-    <span class="w3-hide-small"> Back to Homepage</span>
-  </a>
+<!-- Tombol Home -->
+<a href="{{ '/' | relative_url }}" class="btn-home-responsive w3-button w3-circle" title="Kembali ke Beranda" onclick="this.blur();">
+  <i class="fa fa-home"></i>
+  <span class="w3-hide-small"> Back to Homepage</span>
+</a>
 
-  <a href="#" class="btn-top-responsive w3-button w3-circle" title="Kembali ke Atas" onclick="event.preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'}); this.blur();">
-    <i class="fa fa-arrow-up"></i>
-    <span class="w3-hide-small"> Back to Top</span>
-  </a>
+<!-- Tombol Top -->
+<a href="javascript:void(0)" class="btn-top-responsive w3-button w3-circle" title="Kembali ke Atas" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); this.blur();">
+  <i class="fa fa-arrow-up"></i>
+  <span class="w3-hide-small"> Back to Top</span>
+</a>
 
 <div style="padding-top: 50px;">
   {{ content }}
