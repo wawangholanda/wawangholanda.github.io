@@ -21,19 +21,30 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   min-height: 100vh;
 }
 
+
 /* Style Tombol Back to Top */
+.btn-top-responsive:active,
+.btn-home-responsive:active {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
 .btn-top-responsive {
   position: fixed;
   right: 20px;
   z-index: 9999;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  background-color: #f2ff00 !important; /* Warna background gelap */
-  color: #000000 !important;           /* Warna teks/ikon putih */
+  background-color: #f2ff00 !important;
+  color: #000000 !important;
 }
-.btn-top-responsive:hover {
-  background-color: #000000 !important; /* Warna saat tombol di-hover/disorot */
-  color: #ffffff !important;
-} 
+
+/* Hanya aktifkan hover untuk perangkat yang memakai Mouse/Trackpad */
+@media (hover: hover) {
+  .btn-top-responsive:hover {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
+}
+
 @media (max-width: 600px) {
   .btn-top-responsive { bottom: 20px; }
 }
@@ -42,18 +53,28 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 }
 
 /* Style Tombol Back to Homepage */
+.btn-top-responsive:active,
+.btn-home-responsive:active {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
 .btn-home-responsive {
   position: fixed;
   left: 20px;
   z-index: 9999;
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-  background-color: #f2ff00 !important; /* Warna background  */
-  color: #000000 !important;           /* Warna teks/ikon */
+  background-color: #f2ff00 !important;
+  color: #000000 !important;
 }
-.btn-home-responsive:hover {
-  background-color: #000000 !important; /* Warna saat tombol di-hover/disorot */
-  color: #ffffff !important;
+
+/* Hanya aktifkan hover untuk perangkat yang memakai Mouse/Trackpad */
+@media (hover: hover) {
+  .btn-home-responsive:hover {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+  }
 }
+
 @media (max-width: 600px) {
   .btn-home-responsive { bottom: 20px; }
 }
