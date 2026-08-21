@@ -1,15 +1,177 @@
-/* Custom Style untuk Halaman Portofolio */
+/* =========================================
+   Portfolio Page
+   ========================================= */
+
+.portfolio-title {
+  color: #39ff14;
+  letter-spacing: 1px;
+}
+
+.portfolio-subtitle {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.portfolio-tech-stack .w3-tag {
+  margin: 4px;
+}
+
+
+/* =========================================
+   Featured Project
+   ========================================= */
+
+.portfolio-featured-wrapper {
+  float: none;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .portfolio-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  overflow: hidden;
 }
 
 .portfolio-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
 }
 
-.portfolio-badge {
-  font-size: 12px;
-  text-transform: uppercase;
+
+/* =========================================
+   Project Header
+   ========================================= */
+
+.portfolio-project-header {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(10, 25, 45, 0.98),
+      rgba(20, 45, 70, 0.98)
+    );
+
+  padding: 28px 20px;
+
+  color: #ffffff;
+
+  position: relative;
+}
+
+.portfolio-project-icon {
+  font-size: 52px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.portfolio-status {
+  display: inline-block;
+
+  background-color: #39ff14;
+  color: #000000;
+
+  font-size: 11px;
+  font-weight: bold;
+
+  padding: 5px 10px;
+
+  border-radius: 4px;
+
   letter-spacing: 1px;
+}
+
+
+/* =========================================
+   Project Content
+   ========================================= */
+
+.portfolio-card h2 {
+  font-size: 24px;
+  margin-top: 5px;
+}
+
+.portfolio-card p {
+  line-height: 1.7;
+}
+
+.portfolio-badges {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.portfolio-badges .w3-tag {
+  margin: 3px;
+}
+
+
+/* =========================================
+   GitHub Button
+   ========================================= */
+
+.portfolio-project-actions {
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+.portfolio-github-button {
+  background-color: #111111;
+  color: #ffffff;
+
+  font-weight: bold;
+
+  padding: 10px 22px;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.portfolio-github-button:hover {
+  background-color: #39ff14 !important;
+  color: #000000 !important;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   Coming Soon
+   ========================================= */
+
+.portfolio-coming-soon {
+  margin-top: 10px;
+  padding-bottom: 30px;
+}
+
+.portfolio-coming-soon p {
+  opacity: 0.8;
+}
+
+
+/* =========================================
+   Mobile
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  .portfolio-featured-wrapper {
+    width: 100%;
+  }
+
+  .portfolio-title {
+    font-size: 28px;
+  }
+
+  .portfolio-subtitle {
+    font-size: 15px;
+  }
+
+  .portfolio-card h2 {
+    font-size: 21px;
+  }
+
 }

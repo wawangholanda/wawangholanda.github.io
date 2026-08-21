@@ -6,67 +6,94 @@ title: "My Portfolio and Projects"
 <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:20px">
 
   <header class="w3-container w3-center w3-padding-32">
-    <h1 style="color: #39ff14;"><b>DEVOPS & CLOUD PORTFOLIO</b></h1>
-    <p class="w3-text-white"><b>Building scalable cloud infrastructure, automated deployment pipelines, and reliable systems.</b></p>    
-    <div class="w3-padding-16">
-      <span class="w3-tag w3-round w3-dark-grey">Docker</span>
-      <span class="w3-tag w3-round w3-dark-grey">Kubernetes</span>
+    <h1 class="portfolio-title">
+      <b>DEVOPS & PLATFORM ENGINEERING PORTFOLIO</b>
+    </h1>
+
+    <p class="w3-text-white portfolio-subtitle">
+      <b>
+        Building automated infrastructure, Kubernetes platforms,
+        and reliable cloud systems.
+      </b>
+    </p>
+
+    <div class="w3-padding-16 portfolio-tech-stack">
       <span class="w3-tag w3-round w3-dark-grey">Terraform</span>
-      <span class="w3-tag w3-round w3-dark-grey">GitHub Actions</span>
-      <span class="w3-tag w3-round w3-dark-grey">GitLab CI/CD</span>
-      <span class="w3-tag w3-round w3-dark-grey">Jenkins Pipeline</span>
-      <span class="w3-tag w3-round w3-dark-grey">AWS</span>
+      <span class="w3-tag w3-round w3-dark-grey">Kubernetes</span>
+      <span class="w3-tag w3-round w3-dark-grey">Ansible</span>
+      <span class="w3-tag w3-round w3-dark-grey">Proxmox</span>
+      <span class="w3-tag w3-round w3-dark-grey">Cilium</span>
+      <span class="w3-tag w3-round w3-dark-grey">Helm</span>
       <span class="w3-tag w3-round w3-dark-grey">Prometheus</span>
     </div>
-  </header>  
+  </header>
 
   <div class="w3-row-padding w3-padding-16 w3-center">
-    
-    <div class="w3-third w3-margin-bottom">
-      <div class="w3-card-4 w3-white">
-        <img src="{{ '/assets/images/project1.jpg' | relative_url }}" alt="On Progress" style="width:100%">
-        <div class="w3-container w3-padding">
-          <h3>On Progress</h3>
-          <p class="w3-opacity">stealth</p>
-          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit animi id est laborum."</p>
-          <p><span class="w3-tag w3-teal w3-round">DEVOPS</span> <span class="w3-tag w3-blue w3-round">DEVOPS</span></p>
-        </div>
-      </div>
-    </div>
 
-    <div class="w3-third w3-margin-bottom">
-      <div class="w3-card-4 w3-white">
-        <img src="{{ '/assets/images/project2.jpg' | relative_url }}" alt="On Progress" style="width:100%">
-        <div class="w3-container w3-padding">
-          <h3>On Progress</h3>
-          <p class="w3-opacity">stealth</p>
-          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit animi id est laborum."</p>
-          <p><span class="w3-tag w3-teal w3-round">DEVOPS</span> <span class="w3-tag w3-dark-grey w3-round">Devops</span></p>
-        </div>
-      </div>
-    </div>
+    <div class="w3-third w3-margin-bottom portfolio-featured-wrapper">
 
-    <div class="w3-third w3-margin-bottom">
-      <div class="w3-card-4 w3-white">
-        <img src="{{ '/assets/images/project3.jpg' | relative_url }}" alt="On Progress" style="width:100%">
+      <div class="w3-card-4 w3-white portfolio-card">
+
+        <!-- Project Header -->
+        <div class="portfolio-project-header">
+          <i class="fa fa-cubes portfolio-project-icon"></i>
+          <span class="portfolio-status">IN PROGRESS</span>
+        </div>
+
         <div class="w3-container w3-padding">
-          <h3>On Progress</h3>
-          <p class="w3-opacity">stealth</p>
-          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit animi id est laborum."</p>
-          <p><span class="w3-tag w3-teal w3-round">DEVOPS</span> <span class="w3-tag w3-green w3-round">DEVOPS</span></p>
+
+          <h2>Kubernetes Platform Engineering Lab</h2>
+
+          <p class="w3-opacity">
+            Proxmox · Kubernetes · Infrastructure as Code
+          </p>
+
+          <p>
+            A hands-on Platform Engineering laboratory for building
+            and operating a production-inspired Kubernetes platform
+            on Proxmox using Terraform and Ansible.
+          </p>
+
+          <p>
+            The platform includes Cilium networking, Helm-based
+            deployments, and Prometheus-based observability with
+            automated validation and testing.
+          </p>
+
+          <!-- Technology Badges -->
+          <div class="portfolio-badges">
+            <span class="w3-tag w3-teal w3-round">Terraform</span>
+            <span class="w3-tag w3-teal w3-round">Ansible</span>
+            <span class="w3-tag w3-blue w3-round">Kubernetes</span>
+            <span class="w3-tag w3-blue w3-round">Cilium</span>
+            <span class="w3-tag w3-dark-grey w3-round">Helm</span>
+            <span class="w3-tag w3-dark-grey w3-round">Prometheus</span>
+          </div>
+
+          <!-- Project Link -->
+          <div class="portfolio-project-actions">
+            <a
+              href="https://github.com/wawangholanda/platform-engineering-lab"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w3-button w3-round portfolio-github-button"
+            >
+              <i class="fa fa-github"></i>
+              View Project
+            </a>
+          </div>
+
         </div>
       </div>
+
     </div>
 
   </div>
 
-  <div class="w3-center w3-padding-32">
-    <div class="w3-bar">
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-      <a href="#" class="w3-bar-item w3-button" style="background-color: #fe0101; color: #39ff14; font-weight: bold;">1</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
-    </div>
+  <div class="w3-container w3-center portfolio-coming-soon">
+    <p class="w3-text-white">
+      More platform engineering and cloud projects are coming soon.
+    </p>
   </div>
 
 </div>
