@@ -175,3 +175,322 @@
   }
 
 }
+
+/* =========================================
+   Kubernetes Architecture
+   ========================================= */
+
+.k8s-architecture {
+  margin-top: 30px;
+  padding: 10px 0 20px;
+}
+
+.architecture-layer {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.architecture-box {
+  min-width: 180px;
+  max-width: 240px;
+  flex: 1 1 180px;
+
+  padding: 20px 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(10, 25, 45, 0.98),
+      rgba(20, 45, 70, 0.98)
+    );
+
+  color: #ffffff;
+
+  border-radius: 8px;
+
+  text-align: center;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.architecture-box:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.architecture-box i {
+  display: block;
+
+  font-size: 34px;
+
+  margin-bottom: 12px;
+
+  color: #39ff14;
+}
+
+.architecture-box strong {
+  display: block;
+
+  font-size: 18px;
+
+  margin-bottom: 6px;
+}
+
+.architecture-box span {
+  display: block;
+
+  font-size: 14px;
+
+  opacity: 0.9;
+}
+
+.architecture-box small {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 12px;
+
+  opacity: 0.7;
+}
+
+.architecture-proxmox {
+  max-width: 360px;
+}
+
+.architecture-lb {
+  max-width: 420px;
+}
+
+.architecture-control-plane {
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.architecture-workers {
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.architecture-services {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.architecture-connector {
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  min-height: 55px;
+
+  text-align: center;
+}
+
+.architecture-connector::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  left: 50%;
+
+  width: 2px;
+
+  background-color: #39ff14;
+
+  opacity: 0.6;
+}
+
+.architecture-connector span {
+  position: relative;
+
+  z-index: 1;
+
+  padding: 6px 12px;
+
+  background-color: #111111;
+
+  color: #39ff14;
+
+  border: 1px solid #39ff14;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+
+  font-weight: bold;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* Architecture component variations */
+
+.architecture-lb {
+  border-top: 3px solid #39ff14;
+}
+
+.architecture-cilium {
+  border-top: 3px solid #39ff14;
+}
+
+.architecture-gitops {
+  border-top: 3px solid #00bfff;
+}
+
+.architecture-storage {
+  border-top: 3px solid #ffcc00;
+}
+
+.architecture-monitoring {
+  border-top: 3px solid #ff66cc;
+}
+
+
+/* =========================================
+   Kubernetes Architecture - Mobile
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  .architecture-layer {
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 14px;
+  }
+
+  .architecture-box,
+  .architecture-proxmox,
+  .architecture-lb {
+    width: 90%;
+
+    max-width: 360px;
+
+    flex: none;
+  }
+
+  .architecture-control-plane,
+  .architecture-workers,
+  .architecture-services {
+    width: 100%;
+  }
+
+  .architecture-connector {
+    min-height: 48px;
+  }
+
+  .architecture-connector span {
+    font-size: 11px;
+  }
+
+}
+
+/* =========================================
+   Architecture / Technical Flows
+   ========================================= */
+
+.k8s-storage-flow,
+.k8s-gitops-flow,
+.k8s-idempotency-flow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 25px 0;
+  text-align: center;
+}
+
+.storage-flow-item {
+  background-color: #111111;
+  color: #39ff14;
+
+  border: 1px solid #39ff14;
+  border-radius: 6px;
+
+  padding: 12px 18px;
+
+  font-weight: bold;
+}
+
+.storage-flow-arrow {
+  color: #39ff14;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.k8s-troubleshooting-flow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin: 25px 0;
+  padding: 20px;
+
+  background-color: #111111;
+
+  border-radius: 6px;
+
+  color: #ffffff;
+
+  text-align: center;
+}
+
+.k8s-troubleshooting-flow span {
+  padding: 8px 12px;
+
+  border: 1px solid #39ff14;
+
+  border-radius: 5px;
+
+  color: #39ff14;
+
+  font-size: 13px;
+}
+
+.k8s-troubleshooting-flow strong {
+  color: #39ff14;
+}
+
+@media (max-width: 768px) {
+
+  .k8s-storage-flow,
+  .k8s-gitops-flow,
+  .k8s-idempotency-flow {
+    flex-direction: column;
+  }
+
+  .storage-flow-arrow {
+    transform: rotate(90deg);
+  }
+
+  .k8s-troubleshooting-flow {
+    flex-direction: column;
+  }
+
+}
