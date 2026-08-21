@@ -1,0 +1,974 @@
+---
+layout: portfolio-layout
+title: "Kubernetes Platform Engineering Lab"
+---
+
+<div class="w3-main w3-content w3-padding"
+     style="max-width:1200px;margin-top:20px">
+
+  <!-- Hero -->
+  <header class="w3-container w3-center w3-padding-32">
+
+    <h1 class="portfolio-title">
+      <b>KUBERNETES PLATFORM ENGINEERING LAB</b>
+    </h1>
+
+    <p class="w3-text-white portfolio-subtitle">
+      <b>
+        A production-inspired Kubernetes platform built on Proxmox
+        with Infrastructure as Code, configuration management,
+        GitOps, observability, and automated validation.
+      </b>
+    </p>
+
+    <div class="w3-padding-16 portfolio-tech-stack">
+      <span class="w3-tag w3-round w3-dark-grey">Proxmox</span>
+      <span class="w3-tag w3-round w3-dark-grey">Terraform</span>
+      <span class="w3-tag w3-round w3-dark-grey">Ansible</span>
+      <span class="w3-tag w3-round w3-dark-grey">Kubernetes</span>
+      <span class="w3-tag w3-round w3-dark-grey">Cilium</span>
+      <span class="w3-tag w3-round w3-dark-grey">Argo CD</span>
+      <span class="w3-tag w3-round w3-dark-grey">Prometheus</span>
+    </div>
+
+  </header>
+
+
+  <!-- Project Summary -->
+  <section class="w3-container w3-white w3-padding-32">
+
+    <h2>Project Overview</h2>
+
+    <p>
+      This project is a hands-on Platform Engineering laboratory
+      for designing, automating, operating, and validating a
+      highly available Kubernetes platform on Proxmox.
+    </p>
+
+    <p>
+      Infrastructure is provisioned with Terraform, system and
+      Kubernetes configuration is automated with Ansible, while
+      Cilium, Helm, Argo CD, Prometheus, Grafana, and NFS provide
+      networking, application delivery, observability, and storage.
+    </p>
+
+  </section>
+
+
+  <!-- Project Metrics -->
+  <section class="w3-row-padding w3-padding-32 w3-center">
+
+    <div class="w3-quarter">
+      <div class="w3-white w3-padding">
+        <h2>3</h2>
+        <p>Control Planes</p>
+      </div>
+    </div>
+
+    <div class="w3-quarter">
+      <div class="w3-white w3-padding">
+        <h2>2</h2>
+        <p>Worker Nodes</p>
+      </div>
+    </div>
+
+    <div class="w3-quarter">
+      <div class="w3-white w3-padding">
+        <h2>2</h2>
+        <p>Load Balancers</p>
+      </div>
+    </div>
+
+    <div class="w3-quarter">
+      <div class="w3-white w3-padding">
+        <h2>1</h2>
+        <p>HA Kubernetes Cluster</p>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- Architecture -->
+  <section class="w3-container w3-white w3-padding-32">
+
+    <h2>Architecture</h2>
+
+    <p>
+      The platform consists of a Proxmox virtualization layer,
+      highly available load balancing, three Kubernetes control
+      planes, two worker nodes, Cilium networking, and persistent
+      storage through NFS.
+    </p>
+
+    <div class="k8s-architecture">
+
+  <div class="architecture-layer">
+    <div class="architecture-box architecture-proxmox">
+      <i class="fa fa-server"></i>
+      <strong>Proxmox VE</strong>
+      <span>Virtualization Platform</span>
+    </div>
+  </div>
+
+  <div class="architecture-connector">
+    <span>Infrastructure as Code</span>
+  </div>
+
+  <div class="architecture-layer architecture-automation">
+
+    <div class="architecture-box">
+      <i class="fa fa-code"></i>
+      <strong>Terraform</strong>
+      <span>VM Provisioning</span>
+    </div>
+
+    <div class="architecture-box">
+      <i class="fa fa-cogs"></i>
+      <strong>Ansible</strong>
+      <span>Configuration Management</span>
+    </div>
+
+  </div>
+
+  <div class="architecture-connector">
+    <span>Kubernetes Infrastructure</span>
+  </div>
+
+  <div class="architecture-layer">
+
+    <div class="architecture-box architecture-lb">
+      <i class="fa fa-random"></i>
+      <strong>HAProxy + Keepalived</strong>
+      <span>Highly Available API Endpoint</span>
+      <small>LB01 · 192.168.1.25</small>
+      <small>LB02 · 192.168.1.26</small>
+    </div>
+
+  </div>
+
+  <div class="architecture-connector">
+    <span>Kubernetes API</span>
+  </div>
+
+  <div class="architecture-layer architecture-control-plane">
+
+    <div class="architecture-box">
+      <i class="fa fa-cube"></i>
+      <strong>CP01</strong>
+      <span>192.168.1.20</span>
+      <small>Control Plane</small>
+    </div>
+
+    <div class="architecture-box">
+      <i class="fa fa-cube"></i>
+      <strong>CP02</strong>
+      <span>192.168.1.23</span>
+      <small>Control Plane</small>
+    </div>
+
+    <div class="architecture-box">
+      <i class="fa fa-cube"></i>
+      <strong>CP03</strong>
+      <span>192.168.1.24</span>
+      <small>Control Plane</small>
+    </div>
+
+  </div>
+
+  <div class="architecture-connector">
+    <span>Kubernetes Cluster</span>
+  </div>
+
+  <div class="architecture-layer architecture-workers">
+
+    <div class="architecture-box">
+      <i class="fa fa-cubes"></i>
+      <strong>Worker01</strong>
+      <span>192.168.1.21</span>
+      <small>Application Workloads</small>
+    </div>
+
+    <div class="architecture-box">
+      <i class="fa fa-cubes"></i>
+      <strong>Worker02</strong>
+      <span>192.168.1.22</span>
+      <small>Application Workloads</small>
+    </div>
+
+  </div>
+
+  <div class="architecture-connector">
+    <span>Cilium Networking</span>
+  </div>
+
+  <div class="architecture-layer architecture-services">
+
+    <div class="architecture-box architecture-cilium">
+      <i class="fa fa-share-alt"></i>
+      <strong>Cilium</strong>
+      <span>Container Networking</span>
+      <small>Pod &amp; Service Connectivity</small>
+    </div>
+
+    <div class="architecture-box architecture-gitops">
+      <i class="fa fa-git"></i>
+      <strong>Argo CD</strong>
+      <span>GitOps</span>
+      <small>Declarative Application Delivery</small>
+    </div>
+
+    <div class="architecture-box architecture-storage">
+      <i class="fa fa-database"></i>
+      <strong>NFS CSI</strong>
+      <span>Persistent Storage</span>
+      <small>PV / PVC</small>
+    </div>
+
+    <div class="architecture-box architecture-monitoring">
+      <i class="fa fa-line-chart"></i>
+      <strong>Monitoring</strong>
+      <span>Prometheus + Grafana</span>
+      <small>Alertmanager</small>
+    </div>
+
+  </div>
+
+</div>
+
+  </section>
+
+<!-- Infrastructure as Code -->
+<section class="w3-container w3-white w3-padding-32">
+
+  <h2>Infrastructure as Code</h2>
+
+  <p>
+    The Kubernetes environment starts at the infrastructure layer.
+    Proxmox virtual machines are provisioned declaratively using
+    Terraform and a reusable VM module.
+  </p>
+
+  <div class="w3-row-padding">
+
+    <div class="w3-half">
+
+      <h3>Terraform</h3>
+
+      <p>
+        Terraform manages the lifecycle of the Proxmox virtual
+        machines used by the Kubernetes platform.
+      </p>
+
+      <ul>
+        <li>Reusable Proxmox VM module</li>
+        <li>Ubuntu 24.04 VM template</li>
+        <li>Declarative VM configuration</li>
+        <li>Static network configuration</li>
+        <li>Cloud-init integration</li>
+        <li>QEMU guest agent</li>
+      </ul>
+
+    </div>
+
+    <div class="w3-half">
+
+      <h3>Infrastructure Result</h3>
+
+      <table class="w3-table w3-bordered">
+
+        <tr>
+          <th>Role</th>
+          <th>Nodes</th>
+        </tr>
+
+        <tr>
+          <td>Control Plane</td>
+          <td>3</td>
+        </tr>
+
+        <tr>
+          <td>Worker</td>
+          <td>2</td>
+        </tr>
+
+        <tr>
+          <td>Load Balancer</td>
+          <td>2</td>
+        </tr>
+
+        <tr>
+          <td>Total</td>
+          <td>7 VMs</td>
+        </tr>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Configuration Management -->
+<section class="w3-container w3-white w3-padding-32">
+
+  <h2>Configuration Management</h2>
+
+  <p>
+    Ansible is used to transform the provisioned virtual machines
+    into a functional Kubernetes platform.
+  </p>
+
+  <div class="portfolio-badges">
+
+    <span class="w3-tag w3-teal w3-round">
+      k8s_common
+    </span>
+
+    <span class="w3-tag w3-teal w3-round">
+      k8s_control_plane
+    </span>
+
+    <span class="w3-tag w3-teal w3-round">
+      k8s_control_plane_join
+    </span>
+
+    <span class="w3-tag w3-teal w3-round">
+      load_balancer
+    </span>
+
+    <span class="w3-tag w3-teal w3-round">
+      helm
+    </span>
+
+    <span class="w3-tag w3-teal w3-round">
+      cilium
+    </span>
+
+  </div>
+
+  <p>
+    The automation covers operating-system preparation,
+    Kubernetes prerequisites, control-plane initialization,
+    control-plane joining, load balancing, Helm, and Cilium.
+  </p>
+
+</section>
+
+<!-- Kubernetes HA -->
+<section class="w3-container w3-white w3-padding-32">
+
+  <h2>High Availability Kubernetes</h2>
+
+  <p>
+    The cluster uses three control-plane nodes behind a highly
+    available load-balancing layer.
+  </p>
+
+  <div class="w3-row-padding">
+
+    <div class="w3-third">
+
+      <h3>Control Plane</h3>
+
+      <p>
+        Three control-plane nodes provide redundancy for the
+        Kubernetes control-plane layer.
+      </p>
+
+    </div>
+
+    <div class="w3-third">
+
+      <h3>Load Balancing</h3>
+
+      <p>
+        HAProxy provides the API load-balancing layer while
+        Keepalived provides high availability for the endpoint.
+      </p>
+
+    </div>
+
+    <div class="w3-third">
+
+      <h3>Bootstrap</h3>
+
+      <p>
+        Kubernetes was bootstrapped using kubeadm and the
+        control-plane nodes were joined into the HA cluster.
+      </p>
+
+    </div>
+
+  </div>
+
+  <div class="w3-panel w3-light-grey">
+
+    <p>
+      <strong>Kubernetes version:</strong> v1.34.10
+    </p>
+
+    <p>
+      <strong>Container runtime:</strong> containerd 2.2.1
+    </p>
+
+    <p>
+      <strong>Operating system:</strong> Ubuntu 24.04.4 LTS
+    </p>
+
+  </div>
+
+</section>
+
+<!-- Networking -->
+<section class="w3-container w3-white w3-padding-32">
+
+  <h2>Container Networking with Cilium</h2>
+
+  <p>
+    Cilium provides the networking layer for the Kubernetes
+    cluster and was validated through actual workload and
+    service connectivity tests.
+  </p>
+
+  <div class="w3-row-padding">
+
+    <div class="w3-half">
+
+      <h3>Cilium</h3>
+
+      <ul>
+        <li>Kubernetes CNI</li>
+        <li>Pod networking</li>
+        <li>Service networking</li>
+        <li>ClusterIP connectivity</li>
+        <li>Network observability foundation</li>
+      </ul>
+
+    </div>
+
+    <div class="w3-half">
+
+      <h3>Validation</h3>
+
+      <ul>
+        <li>Cilium pod health</li>
+        <li>Pod-to-pod communication</li>
+        <li>ClusterIP service testing</li>
+        <li>NGINX workload connectivity</li>
+        <li>Cross-node communication</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Storage -->
+<section class="w3-container w3-white w3-padding-32">
+
+  <h2>Persistent Storage</h2>
+
+  <p>
+    Persistent storage is provided through NFS and integrated
+    into Kubernetes using the NFS CSI driver.
+  </p>
+
+  <div class="k8s-storage-flow">
+
+    <div class="storage-flow-item">
+      Application
+    </div>
+
+    <div class="storage-flow-arrow">
+      ↓
+    </div>
+
+    <div class="storage-flow-item">
+      PersistentVolumeClaim
+    </div>
+
+    <div class="storage-flow-arrow">
+      ↓
+    </div>
+
+    <div class="storage-flow-item">
+      StorageClass
+    </div>
+
+    <div class="storage-flow-arrow">
+      ↓
+    </div>
+
+    <div class="storage-flow-item">
+      NFS CSI Driver
+    </div>
+
+    <div class="storage-flow-arrow">
+      ↓
+    </div>
+
+    <div class="storage-flow-item">
+      NFS Server
+    </div>
+
+  </div>
+
+  <h3>Validation</h3>
+
+  <ul>
+    <li>CSI driver deployment</li>
+    <li>StorageClass validation</li>
+    <li>PV/PVC provisioning</li>
+    <li>Volume binding</li>
+    <li>Persistent read/write testing</li>
+  </ul>
+
+</section>
+
+<!-- GitOps -->
+<section class="w3-container w3-white w3-padding-32">
+
+  <h2>GitOps with Argo CD</h2>
+
+  <p>
+    Argo CD provides the GitOps layer for declarative application
+    delivery into the Kubernetes environment.
+  </p>
+
+  <div class="k8s-gitops-flow">
+
+    <div class="storage-flow-item">
+      Git Repository
+    </div>
+
+    <div class="storage-flow-arrow">
+      ↓
+    </div>
+
+    <div class="storage-flow-item">
+      Argo CD
+    </div>
+
+    <div class="storage-flow-arrow">
+      ↓
+    </div>
+
+    <div class="storage-flow-item">
+      Kubernetes
+    </div>
+
+  </div>
+
+  <h3>Validated Applications</h3>
+
+  <div class="portfolio-badges">
+
+    <span class="w3-tag w3-teal w3-round">
+      dev-nginx
+    </span>
+
+    <span class="w3-tag w3-teal w3-round">
+      dev-monitoring
+    </span>
+
+  </div>
+
+  <p>
+    Applications were validated through Argo CD synchronization
+    and health status.
+  </p>
+
+</section>
+
+<!-- Observability -->
+<section class="w3-container w3-white w3-padding-32">
+
+  <h2>Observability</h2>
+
+  <p>
+    The monitoring stack provides visibility into Kubernetes
+    workloads, nodes, and control-plane components.
+  </p>
+
+  <div class="portfolio-badges">
+
+    <span class="w3-tag w3-dark-grey w3-round">
+      Prometheus
+    </span>
+
+    <span class="w3-tag w3-dark-grey w3-round">
+      Alertmanager
+    </span>
+
+    <span class="w3-tag w3-dark-grey w3-round">
+      Grafana
+    </span>
+
+    <span class="w3-tag w3-dark-grey w3-round">
+      Prometheus Operator
+    </span>
+
+    <span class="w3-tag w3-dark-grey w3-round">
+      node-exporter
+    </span>
+
+  </div>
+
+  <h3>Validation</h3>
+
+  <ul>
+    <li>Prometheus readiness endpoint</li>
+    <li>Kubernetes node metrics</li>
+    <li>Kubelet metrics</li>
+    <li>ServiceMonitor discovery</li>
+    <li>Prometheus target health</li>
+  </ul>
+
+  <div class="w3-panel w3-light-grey">
+
+    <p>
+      <strong>Readiness check:</strong>
+    </p>
+
+    <code>
+      curl -s http://localhost:9091/-/ready
+    </code>
+
+    <p>
+      Expected result:
+      <strong>Prometheus Server is Ready.</strong>
+    </p>
+
+  </div>
+
+</section>
+
+<!-- Troubleshooting Case Study -->
+<section class="w3-container w3-white w3-padding-32">
+
+  <h2>Operational Troubleshooting</h2>
+
+  <div class="w3-panel w3-light-grey">
+
+    <h3>Problem</h3>
+
+    <p>
+      Prometheus reported Kubernetes control-plane metrics
+      targets as unavailable.
+    </p>
+
+  </div>
+
+  <h3>Investigation</h3>
+
+  <p>
+    The monitoring path was traced from Prometheus targets
+    through ServiceMonitors and Kubernetes endpoints to the
+    underlying control-plane component configuration.
+  </p>
+
+  <div class="k8s-troubleshooting-flow">
+
+    <span>Prometheus</span>
+    <strong>→</strong>
+    <span>ServiceMonitor</span>
+    <strong>→</strong>
+    <span>Endpoint</span>
+    <strong>→</strong>
+    <span>Kubernetes Component</span>
+    <strong>→</strong>
+    <span>Listener</span>
+
+  </div>
+
+  <div class="w3-panel w3-light-grey">
+
+    <h3>Root Cause</h3>
+
+    <p>
+      The affected metrics endpoint was bound to
+      <code>127.0.0.1</code>, preventing Prometheus from
+      reaching it through the expected network path.
+    </p>
+
+  </div>
+
+  <h3>Resolution</h3>
+
+  <p>
+    The listener configuration was changed to accept connections
+    through the node network interface. The affected component
+    was restarted and the endpoint was tested directly.
+  </p>
+
+  <h3>Validation</h3>
+
+  <ul>
+    <li>Listener checked with <code>ss</code></li>
+    <li>Endpoint tested with <code>curl</code></li>
+    <li>Kubernetes resources verified with <code>kubectl</code></li>
+    <li>Prometheus targets rechecked</li>
+  </ul>
+
+</section>
+
+<!-- Failure Testing -->
+<section class="w3-container w3-white w3-padding-32">
+
+  <h2>Failure Testing</h2>
+
+  <p>
+    The platform was tested under controlled failure scenarios
+    to validate behavior beyond the normal healthy state.
+  </p>
+
+  <div class="w3-row-padding">
+
+    <div class="w3-half">
+
+      <h3>Worker Node Failure</h3>
+
+      <p>
+        A worker node was made unavailable and the resulting
+        cluster behavior and workload recovery were observed.
+      </p>
+
+    </div>
+
+    <div class="w3-half">
+
+      <h3>Control Plane Failure</h3>
+
+      <p>
+        Control-plane nodes were tested individually to validate
+        the behavior of the highly available Kubernetes control
+        plane.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Idempotency -->
+<section class="w3-container w3-white w3-padding-32">
+
+  <h2>Automation Idempotency</h2>
+
+  <p>
+    Ansible automation was repeatedly executed against an
+    already-configured Kubernetes environment.
+  </p>
+
+  <div class="k8s-idempotency-flow">
+
+    <div class="storage-flow-item">
+      Desired State
+    </div>
+
+    <div class="storage-flow-arrow">
+      ↓
+    </div>
+
+    <div class="storage-flow-item">
+      Ansible
+    </div>
+
+    <div class="storage-flow-arrow">
+      ↓
+    </div>
+
+    <div class="storage-flow-item">
+      Existing Environment
+    </div>
+
+    <div class="storage-flow-arrow">
+      ↓
+    </div>
+
+    <div class="storage-flow-item">
+      Converged State
+    </div>
+
+  </div>
+
+  <h3>Validation Approach</h3>
+
+  <ul>
+    <li>Repeated playbook execution</li>
+    <li>Ansible check mode</li>
+    <li>Investigation of unexpected changes</li>
+    <li>Verification of already-correct configuration</li>
+  </ul>
+
+  <p>
+    The goal was to ensure that automation behaves as
+    repeatable configuration management rather than a
+    one-time installation script.
+  </p>
+
+</section>
+
+
+
+  <!-- Technology -->
+  <section class="w3-container w3-white w3-padding-32">
+
+    <h2>Technology Stack</h2>
+
+    <div class="portfolio-badges">
+
+      <span class="w3-tag w3-teal w3-round">Terraform</span>
+      <span class="w3-tag w3-teal w3-round">Ansible</span>
+      <span class="w3-tag w3-blue w3-round">Kubernetes</span>
+      <span class="w3-tag w3-blue w3-round">Cilium</span>
+      <span class="w3-tag w3-dark-grey w3-round">HAProxy</span>
+      <span class="w3-tag w3-dark-grey w3-round">Keepalived</span>
+      <span class="w3-tag w3-dark-grey w3-round">Helm</span>
+      <span class="w3-tag w3-dark-grey w3-round">NFS CSI</span>
+      <span class="w3-tag w3-dark-grey w3-round">Argo CD</span>
+      <span class="w3-tag w3-dark-grey w3-round">Prometheus</span>
+      <span class="w3-tag w3-dark-grey w3-round">Grafana</span>
+
+    </div>
+
+  </section>
+
+
+  <!-- Engineering -->
+  <section class="w3-container w3-white w3-padding-32">
+
+    <h2>Engineering Focus</h2>
+
+    <div class="w3-row-padding">
+
+      <div class="w3-half">
+        <h3>Infrastructure Automation</h3>
+        <p>
+          Proxmox virtual machines are provisioned declaratively
+          using Terraform and reusable infrastructure modules.
+        </p>
+      </div>
+
+      <div class="w3-half">
+        <h3>Configuration Management</h3>
+        <p>
+          Ansible automates operating-system preparation,
+          Kubernetes configuration, Helm, networking, and
+          platform components.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="w3-row-padding">
+
+      <div class="w3-half">
+        <h3>High Availability</h3>
+        <p>
+          Three control-plane nodes are exposed through a
+          highly available HAProxy and Keepalived layer.
+        </p>
+      </div>
+
+      <div class="w3-half">
+        <h3>Observability</h3>
+        <p>
+          Prometheus, Alertmanager, Grafana, and Kubernetes
+          metrics provide visibility into cluster health.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Testing -->
+  <section class="w3-container w3-white w3-padding-32">
+
+    <h2>Testing & Validation</h2>
+
+    <ul>
+      <li>Infrastructure validation</li>
+      <li>Kubernetes node and workload validation</li>
+      <li>Cilium networking validation</li>
+      <li>ClusterIP service testing</li>
+      <li>NFS persistent storage testing</li>
+      <li>Worker-node failure testing</li>
+      <li>Control-plane failure testing</li>
+      <li>Prometheus readiness and metrics validation</li>
+      <li>Ansible repeated execution and idempotency testing</li>
+    </ul>
+
+  </section>
+
+
+  <!-- Troubleshooting -->
+  <section class="w3-container w3-white w3-padding-32">
+
+    <h2>Troubleshooting</h2>
+
+    <p>
+      The platform was also used to investigate real operational
+      issues rather than only validating successful deployments.
+    </p>
+
+    <p>
+      One monitoring issue involved Kubernetes control-plane
+      metrics being unreachable by Prometheus. The investigation
+      traced the problem from Prometheus targets through
+      ServiceMonitors and endpoints to the component listener
+      configuration.
+    </p>
+
+    <p>
+      The root cause was a metrics endpoint bound to
+      <code>127.0.0.1</code>. The configuration was corrected,
+      connectivity was validated, and Prometheus targets were
+      rechecked.
+    </p>
+
+  </section>
+
+
+  <!-- Idempotency -->
+  <section class="w3-container w3-white w3-padding-32">
+
+    <h2>Ansible Idempotency</h2>
+
+    <p>
+      Ansible automation was repeatedly executed against the
+      existing environment to verify that the declared state
+      converges without unnecessary changes.
+    </p>
+
+    <p>
+      Check mode and repeated execution were used as part of
+      the validation process. Unexpected changes were investigated
+      rather than automatically considered acceptable.
+    </p>
+
+  </section>
+
+
+  <!-- GitHub -->
+  <section class="w3-container w3-center w3-padding-32">
+
+    <a
+      href="https://github.com/wawangholanda/platform-engineering-lab"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="w3-button w3-round portfolio-github-button"
+    >
+      <i class="fa fa-github"></i>
+      View Source Code
+    </a>
+
+  </section>
+
+</div>
