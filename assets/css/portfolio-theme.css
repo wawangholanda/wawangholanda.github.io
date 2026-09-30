@@ -153,6 +153,33 @@
 
 
 /* =========================================
+   Support
+   ========================================= */
+
+.portfolio-support {
+  margin-top: 10px;
+  padding: 20px 20px 40px;
+}
+
+.portfolio-support-title {
+  color: #ffffff;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.9),
+    0 0 8px rgba(0, 0, 0, 0.7);
+}
+
+.portfolio-support-text {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #ffffff;
+  text-shadow:
+    0 2px 3px rgba(0, 0, 0, 0.95),
+    0 0 7px rgba(0, 0, 0, 0.75);
+}
+
+
+/* =========================================
    Mobile
    ========================================= */
 
