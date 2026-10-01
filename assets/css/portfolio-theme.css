@@ -179,6 +179,20 @@
     0 0 7px rgba(0, 0, 0, 0.75);
 }
 
+.portfolio-support-card {
+  max-width: 700px;
+  margin: 24px auto;
+  padding: 20px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.portfolio-support-card .portfolio-support-text {
+  margin-bottom: 0;
+}
+
 
 /* =========================================
    Ko-fi
