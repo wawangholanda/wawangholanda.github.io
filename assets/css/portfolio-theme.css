@@ -539,8 +539,8 @@
    Support Buttons
    ========================================= */
 
-.portfolio-qris-button,
-.portfolio-kofi-button {
+a.w3-button.portfolio-qris-button,
+a.w3-button.portfolio-kofi-button {
   background-color: #ccff00 !important;
   color: #111111 !important;
   font-weight: bold;
@@ -548,8 +548,8 @@
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.45);
 }
 
-.portfolio-qris-button:hover,
-.portfolio-kofi-button:hover {
+a.w3-button.portfolio-qris-button:hover,
+a.w3-button.portfolio-kofi-button:hover {
   background-color: #b8e600 !important;
   color: #000000 !important;
 }
