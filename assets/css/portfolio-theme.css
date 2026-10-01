@@ -161,8 +161,9 @@
   padding: 20px 20px 40px;
 }
 
-.portfolio-support h2.portfolio-support-title {
-  color: #ffffff;
+.portfolio-support h2.portfolio-support-title,
+.portfolio-support h3.portfolio-support-title {
+  color: #ffffff !important;
   text-shadow:
     0 2px 4px rgba(0, 0, 0, 0.9),
     0 0 8px rgba(0, 0, 0, 0.7);
@@ -176,6 +177,19 @@
   text-shadow:
     0 2px 3px rgba(0, 0, 0, 0.95),
     0 0 7px rgba(0, 0, 0, 0.75);
+}
+
+
+/* =========================================
+   Ko-fi
+   ========================================= */
+
+.portfolio-kofi-button {
+  color: #ffffff !important;
+  text-shadow:
+    0 2px 3px rgba(0, 0, 0, 0.95),
+    0 0 6px rgba(0, 0, 0, 0.75);
+  font-weight: bold;
 }
 
 
@@ -520,4 +534,22 @@
     flex-direction: column;
   }
 
+}
+/* =========================================
+   Support Buttons
+   ========================================= */
+
+.portfolio-qris-button,
+.portfolio-kofi-button {
+  background-color: #ccff00 !important;
+  color: #111111 !important;
+  font-weight: bold;
+  text-shadow: none;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.45);
+}
+
+.portfolio-qris-button:hover,
+.portfolio-kofi-button:hover {
+  background-color: #b8e600 !important;
+  color: #000000 !important;
 }
