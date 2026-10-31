@@ -1,0 +1,262 @@
+---
+layout: portfolio-layout
+title: "Infrastructure Observability Stack"
+---
+
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:20px">
+
+  <header class="w3-container w3-center w3-padding-32">
+    <h1 class="portfolio-title"><b>INFRASTRUCTURE OBSERVABILITY STACK</b></h1>
+    <p class="w3-text-white portfolio-subtitle">
+      Ansible-driven metrics and centralized logging for infrastructure and Docker workloads.
+    </p>
+    <div class="w3-padding-16 portfolio-tech-stack">
+      <span class="w3-tag w3-round w3-dark-grey">Ansible</span>
+      <span class="w3-tag w3-round w3-dark-grey">Grafana</span>
+      <span class="w3-tag w3-round w3-dark-grey">Prometheus</span>
+      <span class="w3-tag w3-round w3-dark-grey">Loki</span>
+      <span class="w3-tag w3-round w3-dark-grey">Grafana Alloy</span>
+      <span class="w3-tag w3-round w3-dark-grey">Docker</span>
+    </div>
+  </header>
+
+  <section class="w3-container w3-white w3-padding-32">
+    <h2>Project Overview</h2>
+    <p>
+      This project builds a repeatable observability environment for Linux hosts
+      and Docker workloads. Ansible manages installation and configuration,
+      Grafana Alloy collects telemetry from monitored hosts, Prometheus stores
+      metrics, and Loki centralizes eligible container logs. Grafana provides
+      a unified interface for querying and exploring both data types.
+    </p>
+    <p>
+      The repository is designed around an explicitly implemented <strong>Single
+      Instance</strong> deployment profile. The High Availability and
+      High Traffic / Scale-out profiles are future work and are not presented
+      as deployable capabilities yet.
+    </p>
+  </section>
+
+  <section class="w3-container w3-white w3-padding-32">
+    <h2>Architecture</h2>
+    <div class="w3-row-padding w3-center">
+      <div class="w3-third w3-padding-16">
+        <div class="w3-card w3-padding">
+          <i class="fa fa-server fa-2x"></i>
+          <h3>Monitoring Clients</h3>
+          <p>Linux hosts and Docker workloads provide host metrics and container logs.</p>
+        </div>
+      </div>
+      <div class="w3-third w3-padding-16">
+        <div class="w3-card w3-padding">
+          <i class="fa fa-exchange fa-2x"></i>
+          <h3>Grafana Alloy</h3>
+          <p>Agents collect host metrics and conditionally forward Docker log files.</p>
+        </div>
+      </div>
+      <div class="w3-third w3-padding-16">
+        <div class="w3-card w3-padding">
+          <i class="fa fa-chart-bar fa-2x"></i>
+          <h3>Observability Server</h3>
+          <p>Prometheus and Loki store telemetry for exploration through Grafana.</p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-panel w3-light-grey w3-padding">
+      <strong>Metrics path:</strong> Monitoring clients → Grafana Alloy →
+      Prometheus remote-write → Grafana.
+      <br>
+      <strong>Logs path:</strong> Docker json-file log discovery → Grafana Alloy →
+      Loki → Grafana.
+    </div>
+    <p class="w3-text-grey">
+      Grafana uses provisioned Prometheus and Loki data sources. The services
+      communicate over the configured monitoring network; network exposure
+      should remain restricted to trusted systems.
+    </p>
+  </section>
+
+  <section class="w3-container w3-white w3-padding-32">
+    <h2>Metrics Collection</h2>
+    <p>
+      Grafana Alloy runs on monitoring client hosts and collects host-level
+      metrics. It sends those metrics to the central Prometheus remote-write
+      endpoint, where they are retained for querying and dashboard visualization.
+    </p>
+    <ul>
+      <li>Host metrics are collected by Alloy on monitored clients.</li>
+      <li>Prometheus receives metrics through its remote-write receiver.</li>
+      <li>The documented lab defaults retain Prometheus metrics for 15 days.</li>
+      <li>Grafana dashboards provide host and container resource visibility.</li>
+    </ul>
+  </section>
+
+  <section class="w3-container w3-white w3-padding-32">
+    <h2>Centralized Logging</h2>
+    <p>
+      Container log collection is conditional. A discovery helper identifies
+      active Docker containers using the <code>json-file</code> logging driver
+      and makes their log files available to Alloy. Alloy forwards configured
+      targets to Loki for centralized querying in Grafana.
+    </p>
+    <ul>
+      <li>Only eligible containers using the <code>json-file</code> driver are discovered.</li>
+      <li>A temporary log generator is available to validate the log pipeline.</li>
+      <li>Grafana's log exploration dashboard supports filtering and inspection of container logs.</li>
+      <li>The documented lab default for Loki retention is 168 hours (7 days).</li>
+    </ul>
+    <p class="w3-text-grey">
+      Applications must emit useful structured or consistently formatted logs
+      for application-level analysis. Log collection does not automatically
+      guarantee that every application event contains the fields needed for
+      every dashboard query.
+    </p>
+  </section>
+
+  <section class="w3-container w3-white w3-padding-32">
+    <h2>Grafana Dashboards</h2>
+    <div class="w3-row-padding">
+      <div class="w3-half">
+        <h3>Container Resource Overview</h3>
+        <p>
+          Resource-focused panels provide visibility into CPU and memory
+          utilization, top resource-consuming containers, and host disk usage.
+          These views help identify resource pressure and compare workloads.
+        </p>
+      </div>
+      <div class="w3-half">
+        <h3>Container Logs Explorer</h3>
+        <p>
+          Log-focused panels support container log inspection, error and warning
+          exploration, HTTP request-path analysis, and identification of slow
+          HTTP requests where the application emits the expected request fields.
+        </p>
+      </div>
+    </div>
+    <p>
+      Dashboard definitions are maintained as version-controlled JSON files
+      in the repository. This keeps dashboard changes reviewable and repeatable
+      alongside the infrastructure configuration.
+    </p>
+  </section>
+
+  <section class="w3-container w3-white w3-padding-32">
+    <h2>Infrastructure Automation with Ansible</h2>
+    <p>
+      Ansible is used to automate the monitoring server and client configuration.
+      The guided <code>quick-start.sh</code> workflow validates the lab
+      configuration and secrets, checks playbook syntax, verifies SSH
+      connectivity, and runs preflight checks before deployment.
+    </p>
+    <ul>
+      <li>Single Instance deployment is the implemented deployment profile.</li>
+      <li>Inventory separates lab host definitions, local monitoring settings, and production examples.</li>
+      <li>Container image versions, network bind addresses, and monitoring defaults are configurable.</li>
+      <li><code>./quick-start.sh --check</code> performs configuration, connectivity, and read-only preflight checks without deploying.</li>
+      <li>SSH host-key verification is enabled by default.</li>
+    </ul>
+    <p>
+      The deployment workflow is designed to be repeatable, with idempotency
+      applied through Ansible roles where supported. Environment-specific
+      values and credentials remain outside version control.
+    </p>
+  </section>
+
+  <section class="w3-container w3-white w3-padding-32">
+    <h2>Security and Operations</h2>
+    <ul>
+      <li>Keep Grafana, Prometheus, and Loki accessible only from trusted networks.</li>
+      <li>Store Grafana credentials and secret keys in the local secrets file; never commit them.</li>
+      <li>Use dedicated SSH credentials and least-privilege access where practical.</li>
+      <li>Protect cAdvisor and its Docker socket access; a read-only socket mount does not restrict Docker API operations.</li>
+      <li>Review log contents, backup access, and retention because telemetry may contain sensitive information.</li>
+    </ul>
+    <h3>Persistence and Backup Scope</h3>
+    <p>
+      Grafana, Prometheus, and Loki use persistent Docker volumes. The repository
+      includes a profile/configuration archive workflow, but that archive is
+      not a backup of monitoring volumes or historical metrics and logs.
+      Monitoring-data backup and restoration still require implementation and
+      recovery testing before they can be treated as an operational guarantee.
+    </p>
+  </section>
+
+  <section class="w3-container w3-white w3-padding-32">
+    <h2>Testing and Validation</h2>
+    <p>
+      The repository includes validation for the deployment workflow and
+      version-controlled Grafana dashboards. Dashboard tests have been run
+      with pytest to check dashboard structure and query-related expectations.
+      The guided check-only mode also validates configuration, SSH connectivity,
+      and read-only preflight conditions without applying deployment changes.
+    </p>
+    <p>
+      A temporary log generator can be used to produce sample stdout events
+      and verify that eligible Docker logs reach Loki and can be explored
+      through Grafana.
+    </p>
+  </section>
+
+  <section class="w3-container w3-white w3-padding-32">
+    <h2>Implementation Status</h2>
+    <div class="w3-row-padding">
+      <div class="w3-half">
+        <h3><i class="fa fa-check-circle w3-text-green"></i> Implemented</h3>
+        <ul>
+          <li>Guided Single Instance deployment workflow</li>
+          <li>Ansible-based monitoring stack configuration</li>
+          <li>Grafana, Prometheus, and Loki deployment</li>
+          <li>Alloy-based host metrics collection</li>
+          <li>Conditional Docker log forwarding for json-file containers</li>
+          <li>Temporary log generator and dashboard validation workflow</li>
+        </ul>
+      </div>
+      <div class="w3-half">
+        <h3><i class="fa fa-hourglass-half w3-text-orange"></i> In Progress / Planned</h3>
+        <ul>
+          <li>Monitoring configuration backup and recovery</li>
+          <li>Historical metrics and logs backup/restore</li>
+          <li>High Availability lab implementation and testing</li>
+          <li>Scale-out deployment implementation and testing</li>
+          <li>Expanded dashboard and alerting coverage</li>
+        </ul>
+      </div>
+    </div>
+    <div class="w3-panel w3-light-grey w3-padding">
+      <strong>Current scope:</strong> The Single Instance profile is implemented.
+      HA and scale-out are not yet deployable profiles. Backup policy settings
+      in inventory should not be interpreted as proof that scheduled monitoring
+      backups or historical-data recovery are operational.
+    </div>
+  </section>
+
+  <section class="w3-container w3-white w3-padding-32">
+    <h2>Technology Stack</h2>
+    <div class="portfolio-badges">
+      <span class="w3-tag w3-teal w3-round">Ansible</span>
+      <span class="w3-tag w3-blue w3-round">Grafana</span>
+      <span class="w3-tag w3-blue w3-round">Prometheus</span>
+      <span class="w3-tag w3-blue w3-round">Loki</span>
+      <span class="w3-tag w3-dark-grey w3-round">Grafana Alloy</span>
+      <span class="w3-tag w3-dark-grey w3-round">Docker Engine</span>
+      <span class="w3-tag w3-dark-grey w3-round">cAdvisor</span>
+      <span class="w3-tag w3-dark-grey w3-round">Python / pytest</span>
+      <span class="w3-tag w3-dark-grey w3-round">Bash</span>
+    </div>
+  </section>
+
+  <section class="w3-container w3-center w3-padding-32">
+    <a
+      href="https://github.com/wawangholanda/infrastructure-observability-stack"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="w3-button w3-round portfolio-github-button"
+    >
+      <i class="fa fa-github"></i>
+      View Source Code
+    </a>
+  </section>
+
+  {% include portfolio-support.html %}
+
+</div>
