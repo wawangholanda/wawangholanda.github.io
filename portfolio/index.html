@@ -100,9 +100,74 @@ title: "My Portfolio and Projects"
 
   </div>
 
+    <div class="w3-third w3-margin-bottom portfolio-featured-wrapper">
+
+      <div class="w3-card-4 w3-white portfolio-card">
+
+        <div class="portfolio-project-header">
+          <i class="fa fa-microchip portfolio-project-icon"></i>
+          <span class="portfolio-status">IN PROGRESS</span>
+        </div>
+
+        <div class="w3-container w3-padding">
+
+          <h2>Local AI Platform</h2>
+
+          <p class="w3-opacity">
+            Debian · Ansible · Ollama · NVIDIA GPU
+          </p>
+
+          <p>
+            A private, self-hosted AI environment for running local
+            language models with Ollama and Open WebUI on dedicated
+            hardware.
+          </p>
+
+          <p>
+            The platform uses Ansible for repeatable host and service
+            configuration, with Tailscale-restricted HTTPS access,
+            persistent data, and operational backup procedures.
+          </p>
+
+          <div class="portfolio-badges">
+            <span class="w3-tag w3-teal w3-round">Ansible</span>
+            <span class="w3-tag w3-blue w3-round">Ollama</span>
+            <span class="w3-tag w3-blue w3-round">Open WebUI</span>
+            <span class="w3-tag w3-dark-grey w3-round">Debian</span>
+            <span class="w3-tag w3-dark-grey w3-round">Docker</span>
+            <span class="w3-tag w3-dark-grey w3-round">Tailscale</span>
+          </div>
+
+          <div class="portfolio-project-actions">
+
+            <a
+              href="{{ '/portfolio/local-ai-platform/' | relative_url }}"
+              class="w3-button w3-round portfolio-github-button"
+            >
+              <i class="fa fa-book"></i>
+              View Case Study
+            </a>
+
+            <a
+              href="https://github.com/wawangholanda/local-ai-platform"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w3-button w3-round portfolio-github-button"
+            >
+              <i class="fa fa-github"></i>
+              GitHub
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
   <div class="w3-container w3-center portfolio-coming-soon">
     <p class="w3-text-white">
-      More platform engineering and cloud projects are coming soon.
+      Explore the case studies to see how these platforms are designed, automated, and operated.
     </p>
   </div>
 
