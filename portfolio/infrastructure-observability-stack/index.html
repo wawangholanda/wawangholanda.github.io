@@ -30,10 +30,9 @@ title: "Infrastructure Observability Stack"
       a unified interface for querying and exploring both data types.
     </p>
     <p>
-      The repository is designed around an explicitly implemented <strong>Single
-      Instance</strong> deployment profile. The High Availability and
-      High Traffic / Scale-out profiles are future work and are not presented
-      as deployable capabilities yet.
+      The case study focuses on the <strong>Single Instance</strong> deployment
+      profile and documents the engineering directions for extending the
+      platform toward High Availability and higher-scale deployments.
     </p>
   </section>
 
@@ -197,38 +196,7 @@ title: "Infrastructure Observability Stack"
     </p>
   </section>
 
-  <section class="w3-container w3-white w3-padding-32">
-    <h2>Implementation Status</h2>
-    <div class="w3-row-padding">
-      <div class="w3-half">
-        <h3><i class="fa fa-check-circle w3-text-green"></i> Implemented</h3>
-        <ul>
-          <li>Guided Single Instance deployment workflow</li>
-          <li>Ansible-based monitoring stack configuration</li>
-          <li>Grafana, Prometheus, and Loki deployment</li>
-          <li>Alloy-based host metrics collection</li>
-          <li>Conditional Docker log forwarding for json-file containers</li>
-          <li>Temporary log generator and dashboard validation workflow</li>
-        </ul>
-      </div>
-      <div class="w3-half">
-        <h3><i class="fa fa-hourglass-half w3-text-orange"></i> In Progress / Planned</h3>
-        <ul>
-          <li>Monitoring configuration backup and recovery</li>
-          <li>Historical metrics and logs backup/restore</li>
-          <li>High Availability lab implementation and testing</li>
-          <li>Scale-out deployment implementation and testing</li>
-          <li>Expanded dashboard and alerting coverage</li>
-        </ul>
-      </div>
-    </div>
-    <div class="w3-panel w3-light-grey w3-padding">
-      <strong>Current scope:</strong> The Single Instance profile is implemented.
-      HA and scale-out are not yet deployable profiles. Backup policy settings
-      in inventory should not be interpreted as proof that scheduled monitoring
-      backups or historical-data recovery are operational.
-    </div>
-  </section>
+  
 
   <section class="w3-container w3-white w3-padding-32">
     <h2>Technology Stack</h2>
@@ -243,6 +211,22 @@ title: "Infrastructure Observability Stack"
       <span class="w3-tag w3-dark-grey w3-round">Python / pytest</span>
       <span class="w3-tag w3-dark-grey w3-round">Bash</span>
     </div>
+  </section>
+
+  <section class="w3-container w3-white w3-padding-32">
+    <h2>Future Engineering Directions</h2>
+    <p>
+      The next iterations focus on strengthening recovery capabilities,
+      availability, and operational visibility beyond the documented
+      Single Instance deployment profile.
+    </p>
+    <ul>
+      <li>Implement and validate monitoring configuration backup and recovery.</li>
+      <li>Design and test backup and restoration for historical metrics and logs.</li>
+      <li>Build and validate a High Availability deployment profile.</li>
+      <li>Evaluate scale-out architecture and deployment automation.</li>
+      <li>Expand dashboard coverage, alerting, and operational validation.</li>
+    </ul>
   </section>
 
   <section class="w3-container w3-center w3-padding-32">
