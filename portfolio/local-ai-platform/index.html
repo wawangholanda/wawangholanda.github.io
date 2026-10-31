@@ -1,0 +1,490 @@
+---
+layout: portfolio-layout
+title: "Local AI Platform"
+---
+
+<div class="w3-main w3-content w3-padding"
+     style="max-width:1200px;margin-top:20px">
+
+  <!-- Hero -->
+  <header class="w3-container w3-center w3-padding-32">
+
+    <h1 class="portfolio-title">
+      <b>LOCAL AI PLATFORM</b>
+    </h1>
+
+    <p class="w3-text-white portfolio-subtitle">
+      <b>
+        A private, self-hosted AI platform built on Debian 12,
+        combining local LLM inference, NVIDIA GPU acceleration,
+        Ansible automation, and Tailscale-restricted HTTPS access.
+      </b>
+    </p>
+
+    <div class="w3-padding-16 portfolio-tech-stack">
+      <span class="w3-tag w3-round w3-dark-grey">Debian 12</span>
+      <span class="w3-tag w3-round w3-dark-grey">Ansible</span>
+      <span class="w3-tag w3-round w3-dark-grey">Docker</span>
+      <span class="w3-tag w3-round w3-dark-grey">NVIDIA</span>
+      <span class="w3-tag w3-round w3-dark-grey">Ollama</span>
+      <span class="w3-tag w3-round w3-dark-grey">Open WebUI</span>
+      <span class="w3-tag w3-round w3-dark-grey">Tailscale</span>
+    </div>
+
+  </header>
+
+
+  <!-- Project Overview -->
+  <section class="w3-container w3-white w3-padding-32">
+
+    <h2>Project Overview</h2>
+
+    <p>
+      Local AI Platform is a self-hosted AI environment designed
+      to run large language models on privately managed hardware.
+      It combines Ollama as the model inference runtime with
+      Open WebUI as the browser-based interface.
+    </p>
+
+    <p>
+      The platform is managed through Ansible, with dedicated
+      roles and playbooks for operating-system preparation,
+      security baselines, GPU configuration, container runtime,
+      AI services, and private HTTPS access.
+    </p>
+
+    <p>
+      The engineering focus is on repeatable deployment,
+      controlled network exposure, persistent application data,
+      and operational procedures that can be reviewed and reused.
+    </p>
+
+  </section>
+
+
+  <!-- Deployment Profile -->
+  <section class="w3-row-padding w3-padding-32 w3-center">
+
+    <div class="w3-quarter">
+      <div class="w3-white w3-padding">
+        <h2>Debian 12</h2>
+        <p>Operating System</p>
+      </div>
+    </div>
+
+    <div class="w3-quarter">
+      <div class="w3-white w3-padding">
+        <h2>4 GB</h2>
+        <p>NVIDIA T600 VRAM</p>
+      </div>
+    </div>
+
+    <div class="w3-quarter">
+      <div class="w3-white w3-padding">
+        <h2>Ollama</h2>
+        <p>Local Inference Runtime</p>
+      </div>
+    </div>
+
+    <div class="w3-quarter">
+      <div class="w3-white w3-padding">
+        <h2>Ansible</h2>
+        <p>Configuration Management</p>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- Architecture -->
+  <section class="w3-container w3-white w3-padding-32">
+
+    <h2>Architecture</h2>
+
+    <p>
+      Requests travel through a private network path. Nginx
+      terminates HTTPS on the Tailscale interface and forwards
+      requests to Open WebUI, which communicates with Ollama
+      over a dedicated Docker network.
+    </p>
+
+    <div class="w3-row-padding w3-center">
+
+      <div class="w3-col l4 m6 w3-padding-16">
+        <div class="w3-card w3-padding">
+          <i class="fa fa-laptop fa-2x"></i>
+          <h3>Authorized Device</h3>
+          <p>
+            Browser connected to the authorized Tailscale network.
+          </p>
+        </div>
+      </div>
+
+      <div class="w3-col l4 m6 w3-padding-16">
+        <div class="w3-card w3-padding">
+          <i class="fa fa-lock fa-2x"></i>
+          <h3>Private HTTPS</h3>
+          <p>
+            Nginx reverse proxy with TLS certificates managed
+            through Certbot and Cloudflare DNS-01.
+          </p>
+        </div>
+      </div>
+
+      <div class="w3-col l4 m6 w3-padding-16">
+        <div class="w3-card w3-padding">
+          <i class="fa fa-comments fa-2x"></i>
+          <h3>Open WebUI</h3>
+          <p>
+            Browser-based interface published on host loopback,
+            not directly exposed to the LAN.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="w3-center w3-padding-16">
+      <i class="fa fa-arrow-down fa-2x"></i>
+      <p class="w3-text-grey">Private Docker network: ai_backend</p>
+    </div>
+
+    <div class="w3-row-padding w3-center">
+
+      <div class="w3-half w3-padding-16">
+        <div class="w3-card w3-padding">
+          <i class="fa fa-microchip fa-2x"></i>
+          <h3>Ollama</h3>
+          <p>
+            Local model inference with NVIDIA GPU acceleration
+            and persistent model storage.
+          </p>
+        </div>
+      </div>
+
+      <div class="w3-half w3-padding-16">
+        <div class="w3-card w3-padding">
+          <i class="fa fa-database fa-2x"></i>
+          <h3>Persistent Data</h3>
+          <p>
+            Model weights and Open WebUI application data
+            are stored separately on the host.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="w3-text-grey">
+      Network exposure is deliberately restricted: the Ollama API
+      is not published as a host port, and Nginx listens on the
+      Tailscale interface rather than all network interfaces.
+    </p>
+
+  </section>
+
+
+  <!-- AI Runtime -->
+  <section class="w3-container w3-white w3-padding-32">
+
+    <h2>AI Runtime & GPU Acceleration</h2>
+
+    <div class="w3-row-padding">
+
+      <div class="w3-half">
+        <h3>Ollama</h3>
+        <p>
+          Ollama provides the local inference API and manages
+          downloaded model weights in persistent storage.
+        </p>
+        <p>
+          <strong>Configured image:</strong>
+          <code>ollama/ollama:0.40.3</code>
+        </p>
+        <p>
+          <strong>Default model:</strong>
+          <code>qwen3.5:2b-q4_K_M</code>
+        </p>
+      </div>
+
+      <div class="w3-half">
+        <h3>NVIDIA GPU</h3>
+        <p>
+          The host uses an NVIDIA T600 with 4 GiB VRAM.
+          NVIDIA driver configuration and NVIDIA Container Toolkit
+          are managed as dedicated infrastructure phases.
+        </p>
+        <p>
+          GPU readiness is checked before proceeding with the
+          container runtime and AI services.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="w3-panel w3-light-grey w3-padding">
+      <strong>Design goal:</strong>
+      keep inference local to the managed server while providing
+      a browser-based interface through a private network path.
+    </div>
+
+  </section>
+
+
+  <!-- Infrastructure Automation -->
+  <section class="w3-container w3-white w3-padding-32">
+
+    <h2>Infrastructure Automation</h2>
+
+    <p>
+      Ansible is the source of truth for host configuration,
+      service deployment, and reverse-proxy configuration.
+      The repository separates responsibilities into reusable
+      roles and purpose-specific playbooks.
+    </p>
+
+    <div class="w3-row-padding">
+
+      <div class="w3-half">
+        <h3>Baseline & Security</h3>
+        <ul>
+          <li>Operating-system and package preparation</li>
+          <li>SSH security baseline</li>
+          <li>Docker and NVIDIA runtime configuration</li>
+          <li>Tailscale client management</li>
+        </ul>
+      </div>
+
+      <div class="w3-half">
+        <h3>Application Delivery</h3>
+        <ul>
+          <li>Ollama and Open WebUI deployment</li>
+          <li>Nginx reverse-proxy configuration</li>
+          <li>HTTPS certificate automation</li>
+          <li>Backup and operational playbooks</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <h3>Staged Deployment</h3>
+
+    <p>
+      The <code>quick-start.sh</code> entry point exposes separate
+      phases for preflight checks, Ansible preparation, baseline
+      security, Tailscale, GPU, container runtime, AI services,
+      private proxy configuration, and validation.
+    </p>
+
+    <p>
+      Staging allows driver reboots, Tailscale enrollment,
+      service exposure, and other operational prerequisites
+      to be handled explicitly instead of assuming that every
+      deployment can run unattended from start to finish.
+    </p>
+
+  </section>
+
+
+  <!-- Private Access & Security -->
+  <section class="w3-container w3-white w3-padding-32">
+
+    <h2>Private Access & Security</h2>
+
+    <div class="w3-row-padding">
+
+      <div class="w3-half">
+        <h3>Network Boundaries</h3>
+        <ul>
+          <li>HTTPS access restricted to authorized Tailscale clients</li>
+          <li>Nginx bound to the Tailscale interface</li>
+          <li>Open WebUI published only on host loopback</li>
+          <li>Ollama API kept on the internal Docker network</li>
+          <li>Cloudflare DNS-only with DNS-01 certificate validation</li>
+        </ul>
+      </div>
+
+      <div class="w3-half">
+        <h3>Host & Secret Management</h3>
+        <ul>
+          <li>SSH root login disabled by the security baseline</li>
+          <li>Secrets and environment files kept outside Git</li>
+          <li>Sensitive state and backup archives excluded from version control</li>
+          <li>Container and package versions pinned in configuration</li>
+          <li>Docker group membership treated as privileged access</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <p>
+      Private networking is a deliberate security boundary,
+      not a substitute for account security, patch management,
+      careful secret handling, and restricted administrator access.
+    </p>
+
+  </section>
+
+
+  <!-- Persistent Storage & Operations -->
+  <section class="w3-container w3-white w3-padding-32">
+
+    <h2>Persistent Storage & Operations</h2>
+
+    <p>
+      Application data and model weights are persisted separately
+      so that the AI runtime and user interface can be managed
+      without treating container filesystems as the source of truth.
+    </p>
+
+    <div class="w3-responsive">
+      <table class="w3-table w3-bordered w3-striped">
+        <thead>
+          <tr class="w3-light-grey">
+            <th>Component</th>
+            <th>Operational design</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ollama</td>
+            <td>Persistent model storage on the host.</td>
+          </tr>
+          <tr>
+            <td>Open WebUI</td>
+            <td>Persistent application data and host-managed Compose configuration.</td>
+          </tr>
+          <tr>
+            <td>Backups</td>
+            <td>Dedicated backup workflow for Open WebUI application data.</td>
+          </tr>
+          <tr>
+            <td>Model recovery</td>
+            <td>Ollama model weights require a separate backup strategy.</td>
+          </tr>
+          <tr>
+            <td>Upgrades</td>
+            <td>Documented backup and upgrade procedure with pinned image versions.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </section>
+
+
+  <!-- Validation -->
+  <section class="w3-container w3-white w3-padding-32">
+
+    <h2>Operational Validation</h2>
+
+    <p>
+      The repository provides a dedicated validation phase to
+      check the main dependencies and service path after deployment
+      or reconciliation.
+    </p>
+
+    <ul>
+      <li>SSH connectivity and Ansible access</li>
+      <li>Tailscale client and network readiness</li>
+      <li>Docker runtime and NVIDIA GPU readiness</li>
+      <li>HTTPS reachability through the configured private proxy</li>
+      <li>Playbook syntax checks and staged deployment workflow</li>
+    </ul>
+
+    <p>
+      Deployment phases are designed to be idempotent where
+      supported by their Ansible roles. Driver changes, reboots,
+      service restarts, and application migrations still require
+      explicit operational review.
+    </p>
+
+  </section>
+
+
+  <!-- Technology Stack -->
+  <section class="w3-container w3-white w3-padding-32">
+
+    <h2>Technology Stack</h2>
+
+    <div class="portfolio-badges">
+      <span class="w3-tag w3-teal w3-round">Ansible</span>
+      <span class="w3-tag w3-teal w3-round">Debian 12</span>
+      <span class="w3-tag w3-blue w3-round">Ollama</span>
+      <span class="w3-tag w3-blue w3-round">Open WebUI</span>
+      <span class="w3-tag w3-dark-grey w3-round">Docker</span>
+      <span class="w3-tag w3-dark-grey w3-round">NVIDIA T600</span>
+      <span class="w3-tag w3-dark-grey w3-round">NVIDIA Container Toolkit</span>
+      <span class="w3-tag w3-dark-grey w3-round">Nginx</span>
+      <span class="w3-tag w3-dark-grey w3-round">Tailscale</span>
+      <span class="w3-tag w3-dark-grey w3-round">Certbot</span>
+      <span class="w3-tag w3-dark-grey w3-round">Cloudflare DNS-01</span>
+    </div>
+
+  </section>
+
+
+  <!-- Engineering Focus -->
+  <section class="w3-container w3-white w3-padding-32">
+
+    <h2>Engineering Focus</h2>
+
+    <div class="w3-row-padding">
+
+      <div class="w3-half">
+        <h3>Self-Hosted AI</h3>
+        <p>
+          Run model inference on privately managed hardware,
+          with a browser-based interface and persistent model data.
+        </p>
+      </div>
+
+      <div class="w3-half">
+        <h3>Infrastructure as Code</h3>
+        <p>
+          Manage host configuration and service delivery through
+          reusable Ansible roles and staged playbooks.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="w3-row-padding">
+
+      <div class="w3-half">
+        <h3>Private-by-Design Access</h3>
+        <p>
+          Restrict the application entry point to the authorized
+          tailnet and avoid exposing the inference API directly.
+        </p>
+      </div>
+
+      <div class="w3-half">
+        <h3>Operational Readiness</h3>
+        <p>
+          Include backup, upgrade, troubleshooting, and validation
+          procedures as part of the platform repository.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- GitHub -->
+  <section class="w3-container w3-center w3-padding-32">
+
+    <a
+      href="https://github.com/wawangholanda/local-ai-platform"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="w3-button w3-round portfolio-github-button"
+    >
+      <i class="fa fa-github"></i>
+      View Source Code
+    </a>
+
+  </section>
+
+</div>
