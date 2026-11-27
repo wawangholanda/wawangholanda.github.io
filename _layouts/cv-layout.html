@@ -14,6 +14,14 @@
       font-family: "Roboto", sans-serif;
     }
 
+    /* Hide navigation controls in printed/PDF output. */
+    @media print {
+      .btn-home-responsive,
+      .btn-top-responsive {
+        display: none !important;
+      }
+    }
+
     /* CSS Kustom Background Foto */
     .bg-photo-local {
       background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
