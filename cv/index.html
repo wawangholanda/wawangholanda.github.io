@@ -279,71 +279,71 @@ title: "Curriculum Vitae"
 
 <style>
 @media print {
-  /* Memaksa teks tombol tetap terlihat */
-  button {
-    color: #009688 !important; /* Warna teal W3.CSS */
-    background-color: transparent !important;
-    border: 1px solid #009688 !important;
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }  
-  /* 1. Pengaturan Ukuran Kertas & Margin PDF */
   @page {
     size: A4 portrait;
-    margin: 8mm 10mm 8mm 10mm;
+    margin: 8mm 10mm;
   }
 
-  /* 2. Sembunyikan Elemen Non-Print */
-  .w3-button, button, .no-print, nav, footer, header {
+  html, body {
+    background: #fff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  /* Hide controls and decorative page chrome in the PDF. */
+  .w3-button, .w3-btn, button, .no-print, nav, footer, header {
     display: none !important;
   }
 
-  /* 3. Reset Total Body & Margin Atas (Paksa Isi dari Halaman 1 Paling Atas) */
-  html, body, .w3-content, .w3-row-padding, .w3-third, .w3-twothird {
-    background: #fff !important;
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-    position: static !important;
-    float: none !important;
+  .w3-content {
+    max-width: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  /* 4. Matikan CSS Grid / Flexbox (Penyebab Halaman 1 Kosong di Browser) */
+  /*
+   * Let the profile column float beside the experience column.
+   * Unlike absolute positioning, the float remains in document flow:
+   * content starts at the top of page one and can use the full width
+   * once it has passed the profile column.
+   */
   .w3-row-padding {
     display: block !important;
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
-    page-break-inside: auto !important;
-    break-inside: auto !important;
+    overflow: visible !important;
   }
 
-  /* 5. Kolom Kiri (Foto & Info Profil) - Menggunakan Absolute Position di Cetak */
   .w3-third {
     display: block !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
+    position: relative !important;
+    float: left !important;
+    top: auto !important;
+    left: auto !important;
     width: 30% !important;
-    margin: 0 !important;
+    margin: 0 3% 8px 0 !important;
     padding: 0 !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
   }
 
-  /* 6. Kolom Kanan (Pengalaman Kerja) - Diberi Margin Kiri Agar Tidak Menimpa Kolom Kiri */
   .w3-twothird {
     display: block !important;
-    width: 67% !important;
-    margin-left: 33% !important; /* Mendorong kolom kanan ke posisinya */
-    margin-top: 0 !important;
+    position: static !important;
+    float: none !important;
+    width: auto !important;
+    margin: 0 !important;
     padding: 0 !important;
-    page-break-inside: auto !important;
     break-inside: auto !important;
+    page-break-inside: auto !important;
   }
 
-  /* 7. Perbaikan Foto Avatar & Rapat Teks */
   .w3-third .w3-card-4,
-  .w3-third .w3-card {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
+  .w3-third .w3-card,
+  .w3-twothird .w3-card {
     box-shadow: none !important;
   }
 
@@ -356,17 +356,17 @@ title: "Curriculum Vitae"
 
   .w3-third img {
     display: block !important;
-    margin: 0 !important;
-    padding: 0 !important;
     width: 100% !important;
     height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .w3-third .w3-display-bottomleft {
     position: absolute !important;
     bottom: 0 !important;
     left: 0 !important;
-    padding: 8px 16px !important;
+    padding: 8px 12px !important;
     margin: 0 !important;
   }
 
@@ -378,13 +378,11 @@ title: "Curriculum Vitae"
   }
 
   .w3-third .w3-container {
-    padding-top: 10px !important;
-    padding-bottom: 0 !important;
+    padding: 10px 12px 0 !important;
   }
 
   .w3-third p {
-    margin-top: 4px !important;
-    margin-bottom: 4px !important;
+    margin: 4px 0 !important;
     line-height: 1.2 !important;
   }
 
@@ -392,14 +390,25 @@ title: "Curriculum Vitae"
     margin: 8px 0 !important;
   }
 
-  /* 8. Hanya Blok Pengalaman Kerja Individu yang Dilarang Terpotong Tengah Garis */
+  /* Allow long work-history sections to continue naturally across pages. */
   .w3-twothird .w3-container {
-    page-break-inside: avoid !important;
-    break-inside: avoid !important;
-    margin-bottom: 12px !important;
+    margin-bottom: 8px !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
   }
 
-  /* 9. Warna Cetak PDF */
+  .w3-twothird h2,
+  .w3-twothird h5,
+  .w3-twothird h6 {
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  .w3-twothird li {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
   * {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
