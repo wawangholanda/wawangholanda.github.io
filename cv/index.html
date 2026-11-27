@@ -291,26 +291,12 @@ title: "Curriculum Vitae"
     width: 100% !important;
   }
 
-  /* Hide controls and decorative page chrome in the PDF. */
-  .w3-button, .w3-btn, button, .no-print, nav, footer, header {
-    display: none !important;
-  }
-
-  .w3-content {
-    max-width: none !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
-
-  /*
-   * Let the profile column float beside the experience column.
-   * Unlike absolute positioning, the float remains in document flow:
-   * content starts at the top of page one and can use the full width
-   * once it has passed the profile column.
-   */
+  /* Keep the sidebar and main content in parallel columns for the full document. */
   .w3-row-padding {
-    display: block !important;
+    display: grid !important;
+    grid-template-columns: 30% minmax(0, 1fr) !important;
+    column-gap: 3% !important;
+    align-items: start !important;
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -319,12 +305,12 @@ title: "Curriculum Vitae"
 
   .w3-third {
     display: block !important;
-    position: relative !important;
-    float: left !important;
-    top: auto !important;
-    left: auto !important;
-    width: 30% !important;
-    margin: 0 3% 8px 0 !important;
+    position: static !important;
+    float: none !important;
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    width: 100% !important;
+    margin: 0 !important;
     padding: 0 !important;
     break-inside: auto !important;
     page-break-inside: auto !important;
@@ -334,7 +320,10 @@ title: "Curriculum Vitae"
     display: block !important;
     position: static !important;
     float: none !important;
-    width: auto !important;
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    width: 100% !important;
+    min-width: 0 !important;
     margin: 0 !important;
     padding: 0 !important;
     break-inside: auto !important;
